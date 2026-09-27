@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PICKSIL | Independent Brand Strategy & Design</title>
+    
+    <!-- Import Aileron Font -->
+    <link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Aileron', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            DEFAULT: '#00C2CB', 
+                            hover: '#00A3AB',
+                            muted: 'rgba(0, 194, 203, 0.15)'
+                        },
+                        bg: {
+                            black: '#050505',
+                            charcoal: '#111111',
+                            card: '#161616',
+                            border: '#222222',
+                            purple: '#13051f', 
+                            purpleDark: '#0a0212'
+                        }
+                    },
+                    boxShadow: {
+                        'brand-glow': '0 0 20px rgba(0, 194, 203, 0.2)',
+                        'brand-glow-hover': '0 0 35px rgba(0, 194, 203, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(19, 5, 31, 0.8), transparent 40%),
+                radial-gradient(circle at 100% 100%, rgba(10, 2, 18, 0.9), transparent 40%);
+            background-attachment: fixed;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #222222; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00C2CB; }
+
+        .glass-panel {
+            background: rgba(22, 22, 22, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+        .glass-panel:hover {
+            background: rgba(22, 22, 22, 0.6);
+            border-color: rgba(0, 194, 203, 0.2);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #00C2CB 0%, #a5f3fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="text-gray-300 font-sans selection:bg-brand selection:text-bg-black min-h-screen flex flex-col overflow-x-hidden font-light">
+
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 glass-panel border-b border-bg-border/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24 md:h-28"> 
+                
+                <a href="#" class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <img src="PICKSIL Logo_3.svg" alt="PICKSIL Logo" class="h-10 md:h-12 w-auto drop-shadow-md group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/150x50/00C2CB/ffffff?text=PICKSIL'" />
+                </a>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#philosophy" class="text-gray-400 hover:text-white px-3 py-2 text-sm font-semibold tracking-wide transition-colors">Philosophy</a>
+                        <a href="#methodology" class="text-gray-400 hover:text-white px-3 py-2 text-sm font-semibold tracking-wide transition-colors">Framework</a>
+                        <a href="#verticals" class="text-gray-400 hover:text-white px-3 py-2 text-sm font-semibold tracking-wide transition-colors">Experience</a>
+                        <a href="#founder" class="text-gray-400 hover:text-white px-3 py-2 text-sm font-semibold tracking-wide transition-colors">The Founder</a>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="#contact" class="bg-brand text-bg-black hover:bg-brand-hover hover:shadow-brand-glow px-7 py-3 rounded-sm font-bold text-sm tracking-wide uppercase transition-all duration-300">
+                        Work With Me
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-400 hover:text-white focus:outline-none p-2" aria-label="Toggle Menu">
+                        <i data-lucide="menu" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-40 pb-20 lg:pt-56 lg:pb-32 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-bg-border bg-bg-charcoal/50 text-gray-400 font-semibold text-xs tracking-widest uppercase mb-8">
+                    <i data-lucide="globe-2" class="w-3.5 h-3.5 text-brand"></i>
+                    Independent Brand Strategist & Designer • Available Worldwide
+                </div>
+                
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] mb-8">
+                    Strategic Branding & <br/>
+                    <span class="gradient-text">Digital Execution.</span>
+                </h1>
+                
+                <p class="text-xl lg:text-2xl text-gray-400 font-light leading-relaxed mb-10 max-w-2xl">
+                    I help bold businesses build distinct digital identities. No agency bloat. No middlemen. Just direct, undivided collaboration with an expert dedicated to making your brand undeniable.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <a href="#contact" class="w-full sm:w-auto bg-brand text-bg-black hover:bg-brand-hover shadow-brand-glow hover:shadow-brand-glow-hover px-10 py-4 rounded-sm font-bold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-3">
+                        Start a Project
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#methodology" class="w-full sm:w-auto bg-transparent hover:bg-bg-charcoal border border-bg-border text-white px-10 py-4 rounded-sm font-bold text-sm tracking-widest uppercase transition-all duration-300 flex items-center justify-center">
+                        Explore Framework
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="philosophy" class="py-24 bg-bg-black border-y border-bg-border/30 relative overflow-hidden">
+        <div class="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-brand/5 to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand font-black tracking-widest uppercase text-xs mb-4">The Philosophy</h2>
+                <h3 class="text-3xl md:text-5xl font-black text-white leading-tight mb-6">Defy the Ordinary.</h3>
+                <p class="text-lg text-gray-400 font-normal leading-relaxed">
+                    In a saturated market, blending in is the greatest risk you can take. PICKSIL is built on the belief that brands must be bold enough to stand out and strategic enough to stay relevant. We don't just design logos; we engineer digital presence.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 border border-bg-border/50 rounded-sm hover:border-brand/30 transition-colors bg-bg-charcoal/20">
+                    <h4 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                        <i data-lucide="zap" class="w-5 h-5 text-brand"></i> Ambition
+                    </h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Pursue your vision relentlessly. We partner with founders who aren't afraid to challenge the status quo and build something lasting.</p>
+                </div>
+                <div class="p-8 border border-bg-border/50 rounded-sm hover:border-brand/30 transition-colors bg-bg-charcoal/20">
+                    <h4 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                        <i data-lucide="eye" class="w-5 h-5 text-brand"></i> Clarity
+                    </h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Cut through the noise. A distinctive brand delivers a clear message with a consistent visual style that is fiercely goal-focused.</p>
+                </div>
+                <div class="p-8 border border-bg-border/50 rounded-sm hover:border-brand/30 transition-colors bg-bg-charcoal/20">
+                    <h4 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                        <i data-lucide="compass" class="w-5 h-5 text-brand"></i> Strategy First
+                    </h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Design without strategy is just decoration. We build frameworks that shape identity, messaging, and market perception before designing a single pixel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="methodology" class="py-24 bg-bg-charcoal/10 border-b border-bg-border/30 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand font-black tracking-widest uppercase text-xs mb-4">The Methodology</h2>
+                <h3 class="text-3xl md:text-4xl font-black text-white leading-tight">The 3-Phase Framework</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative">
+                <!-- Connecting Line for Desktop -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand/30 to-transparent -translate-y-1/2 z-0"></div>
+
+                <div class="relative z-10 bg-bg-black border border-bg-border p-8 rounded-sm text-center shadow-lg">
+                    <div class="w-14 h-14 bg-bg-charcoal border border-brand/50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-brand-glow">
+                        <span class="text-lg font-black text-white">1</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Brand Strategy</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Audience research, competitive analysis, positioning, and messaging guidelines. The blueprint for growth.</p>
+                </div>
+
+                <div class="relative z-10 bg-bg-black border border-bg-border p-8 rounded-sm text-center shadow-lg">
+                    <div class="w-14 h-14 bg-bg-charcoal border border-brand/50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-brand-glow">
+                        <span class="text-lg font-black text-white">2</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Visual Identity</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Logo design, typography, color palettes, and comprehensive style guides that translate strategy into aesthetics.</p>
+                </div>
+
+                <div class="relative z-10 bg-bg-black border border-bg-border p-8 rounded-sm text-center shadow-lg">
+                    <div class="w-14 h-14 bg-bg-charcoal border border-brand/50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-brand-glow">
+                        <span class="text-lg font-black text-white">3</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Digital Execution</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Website design, marketing collateral, and digital asset creation to launch your brand consistently online.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="verticals" class="py-32 relative bg-bg-black border-b border-bg-border/30">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-brand font-black tracking-widest uppercase text-xs mb-3">Industry Experience</h2>
+                    <h3 class="text-3xl md:text-4xl font-black text-white">Cross-Vertical Strategy</h3>
+                    <p class="text-gray-400 mt-4 font-light leading-relaxed">My approach to strategy is foundational, not limited by industry. I partner with founders and businesses across a wide spectrum of verticals to define their position and engineer their digital presence.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="glass-panel p-6 md:p-8 rounded-sm text-center group cursor-default">
+                    <i data-lucide="film" class="w-8 h-8 text-gray-500 mx-auto mb-4 group-hover:text-brand transition-colors duration-300"></i>
+                    <h4 class="text-base md:text-lg font-bold text-white">Entertainment</h4>
+                </div>
+                
+                <div class="glass-panel p-6 md:p-8 rounded-sm text-center group cursor-default">
+                    <i data-lucide="hard-hat" class="w-8 h-8 text-gray-500 mx-auto mb-4 group-hover:text-brand transition-colors duration-300"></i>
+                    <h4 class="text-base md:text-lg font-bold text-white">Construction</h4>
+                </div>
+
+                <div class="glass-panel p-6 md:p-8 rounded-sm text-center group cursor-default">
+                    <i data-lucide="shopping-bag" class="w-8 h-8 text-gray-500 mx-auto mb-4 group-hover:text-brand transition-colors duration-300"></i>
+                    <h4 class="text-base md:text-lg font-bold text-white">E-Commerce</h4>
+                </div>
+
+                <div class="glass-panel p-6 md:p-8 rounded-sm text-center group cursor-default">
+                    <i data-lucide="smartphone" class="w-8 h-8 text-gray-500 mx-auto mb-4 group-hover:text-brand transition-colors duration-300"></i>
+                    <h4 class="text-base md:text-lg font-bold text-white">Apps & Platforms</h4>
+                </div>
+                
+                <div class="glass-panel p-6 md:p-8 rounded-sm text-center group cursor-default">
+                    <i data-lucide="building-2" class="w-8 h-8 text-gray-500 mx-auto mb-4 group-hover:text-brand transition-colors duration-300"></i>
+                    <h4 class="text-base md:text-lg font-bold text-white">B2B Enterprises</h4>
+                </div>
+                
+                <div class="glass-panel p-6 md:p-8 rounded-sm text-center group cursor-default">
+                    <i data-lucide="coffee" class="w-8 h-8 text-gray-500 mx-auto mb-4 group-hover:text-brand transition-colors duration-300"></i>
+                    <h4 class="text-base md:text-lg font-bold text-white">F&B / Retail</h4>
+                </div>
+                
+                <div class="glass-panel p-6 md:p-8 rounded-sm text-center group cursor-default">
+                    <i data-lucide="heart-pulse" class="w-8 h-8 text-gray-500 mx-auto mb-4 group-hover:text-brand transition-colors duration-300"></i>
+                    <h4 class="text-base md:text-lg font-bold text-white">Health & Tech</h4>
+                </div>
+                
+                <div class="glass-panel p-6 md:p-8 rounded-sm text-center group cursor-default">
+                    <i data-lucide="rocket" class="w-8 h-8 text-gray-500 mx-auto mb-4 group-hover:text-brand transition-colors duration-300"></i>
+                    <h4 class="text-base md:text-lg font-bold text-white">Startups</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="founder" class="py-24 bg-bg-charcoal/30 border-b border-bg-border/30 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div class="lg:col-span-5">
+                    <h2 class="text-brand font-black tracking-widest uppercase text-xs mb-4">The Strategist</h2>
+                    <h3 class="text-3xl md:text-5xl font-black text-white leading-tight mb-6">Bridging tech logic with creative design.</h3>
+                    <p class="text-gray-400 font-light leading-relaxed mb-8">
+                        The evolution from Technology Evangelist to Independent Brand Strategist.
+                    </p>
+                </div>
+                <div class="lg:col-span-7">
+                    <div class="glass-panel p-8 md:p-10 rounded-sm border-l-4 border-l-brand relative">
+                        <i data-lucide="quote" class="absolute top-8 right-8 w-10 h-10 text-bg-border opacity-50"></i>
+                        
+                        <p class="text-base md:text-lg text-gray-300 font-normal leading-relaxed mb-6">
+                            My foundation isn't just in design; it's rooted deeply in technology. Before 2017, I spent years working as a Technology Evangelist, collaborating closely with multiple IT partners to bring complex solutions to market.
+                        </p>
+                        <p class="text-base md:text-lg text-gray-300 font-normal leading-relaxed mb-6">
+                            Applying that technical insight to business creation, I founded multiple ventures between 2017 and 2018. Over time, that vision naturally evolved toward branding and digital marketing, culminating in the launch of <strong class="text-white font-bold">PICKSIL</strong> in 2021.
+                        </p>
+                        <p class="text-base md:text-lg text-gray-300 font-normal leading-relaxed">
+                            After running PICKSIL as a standard, multi-disciplinary agency for several years, I recognized that clients achieve the best results through direct, undivided collaboration. Today, I operate entirely solo. You receive the strategic depth and technical foresight of an agency, delivered with the agility and personal dedication of an independent partner.
+                        </p>
+                        
+                        <div class="mt-8 flex items-center gap-4 pt-8 border-t border-white/5">
+                            <div class="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center border border-brand/20 shrink-0">
+                                <span class="text-brand font-bold text-xl">H</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold tracking-wide">Hassan Zarroug</h4>
+                                <span class="text-brand text-sm font-semibold">Founder & Independent Brand Strategist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-bg-charcoal/20 border-t border-bg-border relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[800px] h-[600px] md:h-[800px] bg-brand/5 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+                
+                <div>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">Let's build<br/>something real.</h2>
+                    <p class="text-lg md:text-xl text-gray-400 font-light mb-10 max-w-md">
+                        Ready to elevate your brand? Reach out directly. No gatekeepers, just straight to the source.
+                    </p>
+                    
+                    <div class="space-y-6 md:space-y-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-brand/10 border border-brand/20 flex items-center justify-center rounded-sm shrink-0">
+                                <i data-lucide="phone" class="w-5 h-5 text-brand"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">WhatsApp / Direct</span>
+                                <a href="tel:+966560038357" class="text-lg md:text-xl text-white font-semibold hover:text-brand transition-colors">+966 56 003 8357</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-brand/10 border border-brand/20 flex items-center justify-center rounded-sm shrink-0">
+                                <i data-lucide="mail" class="w-5 h-5 text-brand"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Email inquiries</span>
+                                <a href="mailto:hello@picksil.co" class="block text-base md:text-lg text-white font-semibold hover:text-brand transition-colors mb-1">hello@picksil.co</a>
+                                <a href="mailto:hassan@picksil.co" class="block text-base md:text-lg text-white font-semibold hover:text-brand transition-colors">hassan@picksil.co</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-brand/10 border border-brand/20 flex items-center justify-center rounded-sm shrink-0">
+                                <i data-lucide="instagram" class="w-5 h-5 text-brand"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Instagram</span>
+                                <a href="https://instagram.com/picksil1" target="_blank" rel="noopener noreferrer" class="text-lg md:text-xl text-white font-semibold hover:text-brand transition-colors">@picksil1</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="glass-panel p-6 md:p-10 border border-bg-border rounded-sm">
+                    <form action="mailto:hello@picksil.co" method="GET" enctype="text/plain" class="space-y-5 md:space-y-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Your Name</label>
+                            <input type="text" name="name" class="w-full bg-bg-black border border-bg-border focus:border-brand focus:ring-1 focus:ring-brand outline-none text-white px-4 py-3 rounded-sm transition-all font-normal" placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Project Scope</label>
+                            <select name="subject" class="w-full bg-bg-black border border-bg-border focus:border-brand focus:ring-1 focus:ring-brand outline-none text-white px-4 py-3 rounded-sm transition-all font-normal appearance-none">
+                                <option value="Brand Strategy & Identity">Brand Strategy & Identity</option>
+                                <option value="Brand Identity Only">Brand Identity Only</option>
+                                <option value="Web Design / Digital Execution">Web Design / Digital</option>
+                                <option value="Consulting / Advisory">Consulting / Advisory</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Message</label>
+                            <textarea name="body" rows="4" class="w-full bg-bg-black border border-bg-border focus:border-brand focus:ring-1 focus:ring-brand outline-none text-white px-4 py-3 rounded-sm transition-all font-normal resize-none" placeholder="Tell me about your vision..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand text-bg-black hover:bg-brand-hover px-6 py-4 rounded-sm font-bold text-sm tracking-widest uppercase transition-all duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-bg-black border-t border-bg-border py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center">
+                <img src="PICKSIL Logo_3.svg" alt="PICKSIL Logo" class="h-8 md:h-10 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300" onerror="this.src='https://placehold.co/100x30/222222/ffffff?text=PICKSIL'" />
+            </div>
+            
+            <div class="text-sm text-gray-500 font-normal text-center md:text-right">
+                &copy; 2026 PICKSIL. Independent Brand Strategist.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+        
+        // Simple mobile menu toggle functionality (Optional enhancement)
+        const menuBtn = document.querySelector('button[aria-label="Toggle Menu"]');
+        const mobileMenu = document.createElement('div');
+        mobileMenu.className = 'fixed inset-0 bg-bg-black/95 backdrop-blur-md z-40 hidden flex-col items-center justify-center space-y-8 text-xl font-bold transition-all';
+        mobileMenu.innerHTML = `
+            <a href="#philosophy" class="text-white hover:text-brand" onclick="closeMenu()">Philosophy</a>
+            <a href="#methodology" class="text-white hover:text-brand" onclick="closeMenu()">Framework</a>
+            <a href="#verticals" class="text-white hover:text-brand" onclick="closeMenu()">Experience</a>
+            <a href="#founder" class="text-white hover:text-brand" onclick="closeMenu()">The Founder</a>
+            <a href="#contact" class="text-brand hover:text-white" onclick="closeMenu()">Work With Me</a>
+            <button class="absolute top-8 right-8 text-white p-2" onclick="closeMenu()">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+        `;
+        document.body.appendChild(mobileMenu);
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            lucide.createIcons(); // Re-init icons for the X button
+            document.body.style.overflow = 'hidden';
+        });
+
+        window.closeMenu = function() {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        };
+    </script>
+</body>
+</html>
