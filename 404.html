@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PICKSIL — Independent Brand Strategy & Design</title>
+<meta name="description" content="PICKSIL is the independent brand strategy and design practice of Hassan Zarroug. Strategy, identity and digital execution — direct, without the agency bloat.">
+<link rel="canonical" href="https://www.picksil.co/">
+<meta property="og:title" content="PICKSIL — Independent Brand Strategy & Design">
+<meta property="og:description" content="Strategy-first branding and digital execution. Direct collaboration, no middlemen.">
+<meta property="og:url" content="https://www.picksil.co/">
+<meta property="og:image" content="https://www.picksil.co/assets/picksil-mark.png">
+<meta name="theme-color" content="#07080a">
+<link rel="icon" type="image/svg+xml" href="assets/picksil-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080a; --bg-2:#0d0f12; --card:#111418; --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+  --text:#eef1f3; --muted:#9aa3ab; --dim:#6b747c;
+  --brand:#00c2cb; --brand-2:#7ef0f5; --brand-ink:#002a2c;
+  --r:20px; --ease:cubic-bezier(.2,.8,.2,1);
+  --max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font:400 17px/1.6 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--brand);color:var(--brand-ink)}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.serif{font-family:"Instrument Serif",serif;font-weight:400;font-style:italic;letter-spacing:-.01em}
+.mono{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.skip{position:absolute;left:-999px;top:8px;background:var(--brand);color:var(--brand-ink);padding:10px 16px;border-radius:8px;z-index:200}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:6px}
+
+/* ambient */
+.grain{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
+
+/* nav */
+.nav{position:fixed;top:14px;left:0;right:0;z-index:100}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 16px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 10px 10px 18px;border:1px solid var(--line);border-radius:999px;
+  background:rgba(10,12,14,.6);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);transition:background .3s var(--ease),border-color .3s}
+.nav.scrolled .bar{background:rgba(10,12,14,.85);border-color:var(--line-2)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.18em;font-size:14px}
+.logo .crop{height:24px;width:17px;overflow:hidden}.logo .crop img{width:17px;height:auto}
+.links{display:flex;gap:4px}
+.links a{padding:9px 14px;border-radius:999px;font-size:14px;color:var(--muted);font-weight:500;transition:color .2s,background .2s}
+.links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:12px 20px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;border:0;transition:transform .2s var(--ease),box-shadow .3s,background .2s}
+.btn-primary{background:var(--brand);color:var(--brand-ink)}
+.btn-primary:hover{box-shadow:0 10px 40px -8px rgba(0,194,203,.6);transform:translateY(-1px)}
+.btn-ghost{border:1px solid var(--line-2);color:var(--text);background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.05)}
+.btn svg{width:16px;height:16px;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.menu-btn{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);background:transparent;color:var(--text);cursor:pointer;align-items:center;justify-content:center}
+.drawer{display:none}
+@media (max-width:860px){
+  .links,.bar>.btn{display:none}
+  .menu-btn{display:inline-flex}
+  .drawer{display:block;position:fixed;inset:0;z-index:99;background:rgba(7,8,10,.96);backdrop-filter:blur(10px);padding:110px 24px 32px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+  .drawer.open{opacity:1;visibility:visible}
+  .drawer a{display:block;font-size:34px;font-weight:700;padding:12px 0;border-bottom:1px solid var(--line);letter-spacing:-.02em}
+  .drawer .btn{margin-top:28px;font-size:16px}
+}
+
+/* hero */
+.hero{position:relative;min-height:100dvh;display:flex;align-items:center;padding:150px 0 90px;overflow:hidden}
+.hero .glow.a{width:620px;height:620px;background:rgba(0,194,203,.22);top:-160px;right:-160px}
+.hero .glow.b{width:520px;height:520px;background:rgba(92,40,160,.25);bottom:-220px;left:-180px}
+.gridlines{position:absolute;inset:0;z-index:0;opacity:.5;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:80px 80px;
+  mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 65%);-webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 65%)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid var(--line-2);border-radius:999px;color:var(--muted);background:rgba(255,255,255,.02)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 0 rgba(0,194,203,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(0,194,203,0)}100%{box-shadow:0 0 0 0 rgba(0,194,203,0)}}
+h1{font-size:clamp(46px,8.6vw,124px);line-height:.94;letter-spacing:-.045em;font-weight:800;margin:28px 0 30px;max-width:11ch}
+h1 .serif{color:var(--brand-2);font-size:1.05em;letter-spacing:-.02em}
+.lede{max-width:560px;font-size:clamp(17px,1.6vw,20px);color:var(--muted)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.hero-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:80px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--line);max-width:760px}
+.hero-meta div{background:var(--bg);padding:20px 22px}
+.hero-meta b{display:block;font-size:30px;font-weight:800;letter-spacing:-.03em}
+.hero-meta span{color:var(--dim);font-size:13px}
+.mark-float{position:absolute;right:3%;top:50%;transform:translateY(-50%);width:min(24vw,320px);opacity:.9;z-index:1;filter:drop-shadow(0 30px 80px rgba(0,194,203,.35))}
+.mark-float img{width:100%;height:auto;animation:float 9s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-18px) rotate(-2deg)}}
+@media (max-width:1180px){.mark-float{display:none}}
+@media (max-width:560px){.hero-meta{grid-template-columns:1fr}}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding:22px 0;background:var(--bg-2)}
+.track{display:flex;gap:56px;width:max-content;animation:scroll 40s linear infinite}
+.track span{font-size:clamp(22px,3vw,34px);font-weight:700;letter-spacing:-.02em;color:var(--dim);display:flex;align-items:center;gap:56px;white-space:nowrap}
+.track span::after{content:"";width:10px;height:10px;background:var(--brand);border-radius:2px;transform:rotate(45deg)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* sections */
+section{position:relative;padding:130px 0}
+.eyebrow{color:var(--brand);display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--brand)}
+h2{font-size:clamp(36px,5.4vw,72px);line-height:1;letter-spacing:-.04em;font-weight:800;max-width:16ch}
+h2 .serif{color:var(--brand-2)}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:64px}
+.head p{max-width:440px;color:var(--muted)}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px;overflow:hidden;transition:border-color .3s,transform .4s var(--ease)}
+.card:hover{border-color:rgba(0,194,203,.35);transform:translateY(-4px)}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(0,194,203,.12),transparent 50%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover::before{opacity:1}
+.card h3{font-size:24px;letter-spacing:-.02em;font-weight:700;margin:20px 0 10px}
+.card p{color:var(--muted);font-size:16px}
+.ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(0,194,203,.1);color:var(--brand);border:1px solid rgba(0,194,203,.25)}
+.ico svg{width:22px;height:22px}
+.c-big{grid-column:span 4;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;
+  background:linear-gradient(140deg,#0f2a2c 0%,#111418 55%)}
+.c-big .quote{font-size:clamp(28px,3.4vw,46px);line-height:1.08;letter-spacing:-.03em;font-weight:700;max-width:18ch}
+.c-big .quote .serif{color:var(--brand-2)}
+.c-sm{grid-column:span 2}
+.c-third{grid-column:span 2}
+@media (max-width:960px){.c-big,.c-sm,.c-third{grid-column:span 6}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+.step{border-top:1px solid var(--line-2);padding-top:28px;position:relative}
+.step .n{font-family:"JetBrains Mono",monospace;color:var(--brand);font-size:13px}
+.step h3{font-size:clamp(26px,2.6vw,34px);letter-spacing:-.03em;font-weight:700;margin:14px 0 14px}
+.step p{color:var(--muted)}
+.step ul{list-style:none;margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.step li{font-size:13px;padding:6px 12px;border:1px solid var(--line-2);border-radius:999px;color:var(--muted)}
+.step .bar-fill{position:absolute;top:-1px;left:0;height:1px;width:0;background:var(--brand);transition:width 1.2s var(--ease)}
+.step.in .bar-fill{width:100%}
+@media (max-width:860px){.steps{grid-template-columns:1fr;gap:48px}}
+
+/* verticals */
+.verts{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;gap:1px;background:var(--line)}
+.vert{background:var(--bg);padding:30px 26px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;transition:background .3s}
+.vert:hover{background:#0c1416}
+.vert svg{width:22px;height:22px;color:var(--brand)}
+.vert b{font-size:19px;font-weight:700;letter-spacing:-.01em}
+@media (max-width:860px){.verts{grid-template-columns:repeat(2,1fr)}}
+
+/* founder */
+.founder{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
+.portrait{position:sticky;top:120px;aspect-ratio:4/5;border-radius:24px;border:1px solid var(--line);overflow:hidden;
+  background:radial-gradient(circle at 30% 20%,rgba(0,194,203,.35),transparent 55%),linear-gradient(160deg,#12181b,#0a0b0d);display:flex;flex-direction:column;justify-content:space-between;padding:28px}
+.portrait img{width:38%;height:auto;opacity:.95}
+.portrait .who b{display:block;font-size:26px;letter-spacing:-.02em}
+.portrait .who span{color:var(--muted);font-size:14px}
+.timeline{list-style:none;margin-top:44px}
+.timeline li{display:grid;grid-template-columns:110px 1fr;gap:24px;padding:24px 0;border-top:1px solid var(--line)}
+.timeline .yr{font-family:"JetBrains Mono",monospace;color:var(--brand);font-size:14px;padding-top:3px}
+.timeline p{color:var(--muted)}
+.timeline strong{color:var(--text);font-weight:600}
+.bigtext{font-size:clamp(22px,2.2vw,28px);line-height:1.4;letter-spacing:-.015em;color:var(--text);font-weight:500;margin-top:26px}
+.bigtext em{font-family:"Instrument Serif",serif;color:var(--brand-2);font-size:1.12em}
+@media (max-width:900px){.founder{grid-template-columns:1fr}.portrait{position:relative;top:0;aspect-ratio:16/10}}
+@media (max-width:520px){.timeline li{grid-template-columns:1fr;gap:6px}}
+
+/* contact */
+.contact{padding-bottom:80px}
+.contact-card{position:relative;border:1px solid var(--line-2);border-radius:32px;overflow:hidden;padding:clamp(32px,6vw,80px);
+  background:radial-gradient(800px circle at 100% 0%,rgba(0,194,203,.18),transparent 60%),var(--bg-2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:48px}
+.channels{display:flex;flex-direction:column;gap:12px}
+.channel{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px;border:1px solid var(--line);border-radius:16px;transition:border-color .2s,background .2s}
+.channel:hover{border-color:rgba(0,194,203,.4);background:rgba(0,194,203,.04)}
+.channel small{display:block;color:var(--dim);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}
+.channel b{font-weight:600;font-size:17px}
+.channel svg{width:18px;height:18px;color:var(--brand);flex:none}
+form{display:flex;flex-direction:column;gap:18px}
+label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px}
+input,select,textarea{width:100%;min-height:50px;padding:14px 16px;border-radius:12px;border:1px solid var(--line-2);background:rgba(0,0,0,.35);color:var(--text);font:inherit;font-size:16px;transition:border-color .2s,box-shadow .2s}
+textarea{min-height:130px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 4px rgba(0,194,203,.15)}
+select option{background:#111}
+.form-note{font-size:13px;color:var(--dim)}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr;gap:40px}}
+
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--dim);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.giant{font-size:clamp(80px,22vw,320px);font-weight:800;letter-spacing:-.06em;line-height:.8;text-align:center;
+  background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,0));-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none;padding-top:40px;overflow:hidden}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="bar">
+      <a href="#top" class="logo" aria-label="PICKSIL home"><span class="crop"><img src="assets/picksil-mark.svg" alt="" width="17" height="24"></span>PICKSIL</a>
+      <nav class="links" aria-label="Primary">
+        <a href="#philosophy">Philosophy</a>
+        <a href="#framework">Framework</a>
+        <a href="#experience">Experience</a>
+        <a href="#founder">Founder</a>
+      </nav>
+      <a href="#contact" class="btn btn-primary">Work with me <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer" aria-hidden="true">
+  <a href="#philosophy">Philosophy</a>
+  <a href="#framework">Framework</a>
+  <a href="#experience">Experience</a>
+  <a href="#founder">Founder</a>
+  <a href="#contact" class="btn btn-primary">Start a project</a>
+</div>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="gridlines" aria-hidden="true"></div>
+    <div class="glow a" aria-hidden="true"></div>
+    <div class="glow b" aria-hidden="true"></div>
+    <div class="mark-float" aria-hidden="true"><img src="assets/picksil-mark.svg" alt="" width="380" height="535"></div>
+    <div class="wrap">
+      <span class="pill mono rv"><span class="dot"></span>Independent brand strategist · Available worldwide</span>
+      <h1 class="rv d1">Brands built to be <span class="serif">picked.</span></h1>
+      <p class="lede rv d2">I help bold businesses build distinct identities and digital presence. No agency bloat, no middlemen — direct, undivided collaboration with one strategist dedicated to making your brand undeniable.</p>
+      <div class="cta-row rv d3">
+        <a href="#contact" class="btn btn-primary">Start a project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#framework" class="btn btn-ghost">See the framework</a>
+      </div>
+      <div class="hero-meta rv d3">
+        <div><b>2021</b><span>PICKSIL founded</span></div>
+        <div><b>8+</b><span>Industries served</span></div>
+        <div><b>1:1</b><span>Direct with the founder</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Brand Strategy</span><span>Visual Identity</span><span>Positioning</span><span>Web Design</span><span>Packaging</span><span>Messaging</span><span>Digital Execution</span>
+      <span>Brand Strategy</span><span>Visual Identity</span><span>Positioning</span><span>Web Design</span><span>Packaging</span><span>Messaging</span><span>Digital Execution</span>
+    </div>
+  </div>
+
+  <section id="philosophy">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow mono rv">The philosophy</p>
+          <h2 class="rv d1">Defy the <span class="serif">ordinary.</span></h2>
+        </div>
+        <p class="rv d2">In a saturated market, blending in is the greatest risk you can take. Brands must be bold enough to stand out and strategic enough to stay relevant.</p>
+      </div>
+      <div class="bento">
+        <article class="card c-big rv">
+          <p class="mono" style="color:var(--brand);margin-bottom:auto">Manifesto</p>
+          <p class="quote">We don't just design logos. We <span class="serif">engineer</span> digital presence.</p>
+        </article>
+        <article class="card c-sm rv d1">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <h3>Strategy first</h3>
+          <p>Design without strategy is decoration. Identity, messaging and perception are set before a single pixel.</p>
+        </article>
+        <article class="card c-third rv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg></div>
+          <h3>Ambition</h3>
+          <p>I partner with founders who aren't afraid to challenge the status quo and build something lasting.</p>
+        </article>
+        <article class="card c-third rv d1">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <h3>Clarity</h3>
+          <p>Cut through the noise — one clear message, one consistent visual language, fiercely goal-focused.</p>
+        </article>
+        <article class="card c-third rv d2">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <h3>Direct partnership</h3>
+          <p>Agency-level depth with the agility of an independent. You work with me — start to finish.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="framework" style="background:var(--bg-2);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow mono rv">The methodology</p>
+          <h2 class="rv d1">A three-phase <span class="serif">framework.</span></h2>
+        </div>
+        <p class="rv d2">Every engagement moves from insight to identity to launch, so what ships online is grounded in a strategy that holds.</p>
+      </div>
+      <div class="steps">
+        <div class="step rv"><span class="bar-fill"></span>
+          <span class="n">01 / Strategy</span>
+          <h3>Brand Strategy</h3>
+          <p>The blueprint for growth — who you serve, where you win, and what you say.</p>
+          <ul><li>Audience research</li><li>Competitive analysis</li><li>Positioning</li><li>Messaging</li></ul>
+        </div>
+        <div class="step rv d1"><span class="bar-fill"></span>
+          <span class="n">02 / Identity</span>
+          <h3>Visual Identity</h3>
+          <p>Strategy translated into a system people recognise instantly.</p>
+          <ul><li>Logo design</li><li>Typography</li><li>Color palette</li><li>Style guide</li></ul>
+        </div>
+        <div class="step rv d2"><span class="bar-fill"></span>
+          <span class="n">03 / Launch</span>
+          <h3>Digital Execution</h3>
+          <p>Bringing the brand to market consistently, everywhere it appears.</p>
+          <ul><li>Website design</li><li>Collateral</li><li>Packaging</li><li>Digital assets</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow mono rv">Industry experience</p>
+          <h2 class="rv d1">Cross-vertical <span class="serif">strategy.</span></h2>
+        </div>
+        <p class="rv d2">The approach is foundational, not tied to one industry — from startups to enterprises, across the Saudi market and beyond.</p>
+      </div>
+      <div class="verts rv">
+        <div class="vert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="m10 9 5 3-5 3V9Z"/></svg><b>Entertainment</b></div>
+        <div class="vert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20M4 20V10l8-6 8 6v10M9 20v-6h6v6"/></svg><b>Construction</b></div>
+        <div class="vert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l3 12h11l2-8H6"/></svg><b>E-Commerce</b></div>
+        <div class="vert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg><b>Apps & Platforms</b></div>
+        <div class="vert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><b>B2B Enterprises</b></div>
+        <div class="vert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18l-2 11H5L3 9ZM8 9V6a4 4 0 0 1 8 0v3"/></svg><b>F&B / Retail</b></div>
+        <div class="vert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 8-6-16-3 8H2"/></svg><b>Health & Tech</b></div>
+        <div class="vert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c-1-4 1-9 7-14 1 4 0 7-2 9M12 5c5 2 7 7 7 7s-3 3-7 2"/><path d="M4 20l4-4"/></svg><b>Startups</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="founder" style="background:var(--bg-2);border-block:1px solid var(--line)">
+    <div class="wrap founder">
+      <div class="portrait rv">
+        <img src="assets/picksil-mark.svg" alt="" width="120" height="170">
+        <div class="who"><b>Hassan Zarroug</b><span>Founder & Independent Brand Strategist</span></div>
+      </div>
+      <div>
+        <p class="eyebrow mono rv">The strategist</p>
+        <h2 class="rv d1">Tech logic, <span class="serif">creative</span> craft.</h2>
+        <p class="bigtext rv d2">My foundation isn't just design — it's rooted in technology. You get the strategic depth of an agency with the <em>personal dedication</em> of an independent partner.</p>
+        <ul class="timeline">
+          <li class="rv"><span class="yr">Pre-2017</span><p><strong>Technology Evangelist.</strong> Years working alongside multiple IT partners to bring complex solutions to market.</p></li>
+          <li class="rv"><span class="yr">2017–18</span><p><strong>Founder, multiple ventures.</strong> Applying technical insight to building businesses from the ground up.</p></li>
+          <li class="rv"><span class="yr">2021</span><p><strong>PICKSIL launched</strong> as a multi-disciplinary branding and digital agency.</p></li>
+          <li class="rv"><span class="yr">Today</span><p><strong>Independent.</strong> Clients get the best results through direct, undivided collaboration — so that's the only way I work now.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-card rv">
+        <p class="eyebrow mono">Get in touch</p>
+        <h2>Let's build something <span class="serif">real.</span></h2>
+        <div class="contact-grid">
+          <div class="channels">
+            <a class="channel" href="https://wa.me/966560038357" target="_blank" rel="noopener"><span><small>WhatsApp / Direct</small><b>+966 56 003 8357</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="channel" href="mailto:hello@picksil.co"><span><small>New projects</small><b>hello@picksil.co</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="channel" href="mailto:hassan@picksil.co"><span><small>Direct to Hassan</small><b>hassan@picksil.co</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="channel" href="https://instagram.com/picksil1" target="_blank" rel="noopener"><span><small>Instagram</small><b>@picksil1</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </div>
+          <form id="contactForm" novalidate>
+            <div><label for="f-name">Your name *</label><input id="f-name" name="name" autocomplete="name" required></div>
+            <div><label for="f-scope">Project scope</label>
+              <select id="f-scope" name="scope">
+                <option>Brand Strategy & Identity</option><option>Brand Identity Only</option><option>Web Design / Digital</option><option>Packaging</option><option>Consulting / Advisory</option><option>Other</option>
+              </select></div>
+            <div><label for="f-msg">Message *</label><textarea id="f-msg" name="message" required placeholder="Tell me about your brand and goals"></textarea></div>
+            <button class="btn btn-primary" type="submit" style="align-self:flex-start">Send message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <p class="form-note" id="formNote" role="status" aria-live="polite">Opens your email app with the details filled in.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="giant" aria-hidden="true">PICKSIL</div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> PICKSIL. Independent brand strategy & design.</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', scrollY > 30);
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  const btn = document.getElementById('menuBtn'), drawer = document.getElementById('drawer');
+  const setMenu = open => { drawer.classList.toggle('open', open); btn.setAttribute('aria-expanded', open); drawer.setAttribute('aria-hidden', !open); document.body.style.overflow = open ? 'hidden' : ''; };
+  btn.addEventListener('click', () => setMenu(!drawer.classList.contains('open')));
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.15, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  document.querySelectorAll('.card').forEach(c => c.addEventListener('pointermove', e => {
+    const r = c.getBoundingClientRect();
+    c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }));
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const form = document.getElementById('contactForm'), note = document.getElementById('formNote');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = form.name.value.trim(), msg = form.message.value.trim();
+    if (!name || !msg) { note.textContent = 'Please add your name and a short message.'; note.style.color = '#ff8a8a'; (name ? form.message : form.name).focus(); return; }
+    const subject = `New project inquiry — ${form.scope.value}`;
+    const body = `Name: ${name}\nScope: ${form.scope.value}\n\n${msg}`;
+    location.href = `mailto:hello@picksil.co?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    note.style.color = ''; note.textContent = 'Opening your email app…';
+  });
+})();
+</script>
+</body>
+</html>
