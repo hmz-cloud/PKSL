@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://www.picksil.co/">
 <meta property="og:image" content="https://www.picksil.co/assets/picksil-mark.png">
 <meta name="theme-color" content="#07080a">
-<link rel="icon" type="image/svg+xml" href="assets/picksil-mark.svg">
+<link rel="icon" type="image/png" href="assets/picksil-p.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -44,11 +44,12 @@ img,svg{display:block;max-width:100%}
 /* nav */
 .nav{position:fixed;top:14px;left:0;right:0;z-index:100}
 .nav-inner{max-width:var(--max);margin:0 auto;padding:0 16px}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 10px 10px 18px;border:1px solid var(--line);border-radius:999px;
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:6px 8px 6px 10px;border:1px solid var(--line);border-radius:999px;
   background:rgba(10,12,14,.6);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);transition:background .3s var(--ease),border-color .3s}
 .nav.scrolled .bar{background:rgba(10,12,14,.85);border-color:var(--line-2)}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.18em;font-size:14px}
-.logo .crop{height:24px;width:17px;overflow:hidden}.logo .crop img{width:17px;height:auto}
+.logo{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;transition:background .2s}
+.logo:hover{background:rgba(255,255,255,.05)}
+.logo .crop{height:30px;width:21px;overflow:hidden}.logo .crop img{width:21px;height:auto}
 .links{display:flex;gap:4px}
 .links a{padding:9px 14px;border-radius:999px;font-size:14px;color:var(--muted);font-weight:500;transition:color .2s,background .2s}
 .links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
@@ -81,7 +82,7 @@ img,svg{display:block;max-width:100%}
 .pill{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid var(--line-2);border-radius:999px;color:var(--muted);background:rgba(255,255,255,.02)}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 0 rgba(0,194,203,.6);animation:pulse 2.4s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(0,194,203,0)}100%{box-shadow:0 0 0 0 rgba(0,194,203,0)}}
-h1{font-size:clamp(46px,8.6vw,124px);line-height:.94;letter-spacing:-.045em;font-weight:800;margin:28px 0 30px;max-width:11ch}
+h1{font-size:clamp(46px,8vw,116px);line-height:.94;letter-spacing:-.045em;font-weight:800;margin:0 0 30px;max-width:11ch}
 h1 .serif{color:var(--brand-2);font-size:1.05em;letter-spacing:-.02em}
 .lede{max-width:560px;font-size:clamp(17px,1.6vw,20px);color:var(--muted)}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
@@ -89,10 +90,11 @@ h1 .serif{color:var(--brand-2);font-size:1.05em;letter-spacing:-.02em}
 .hero-meta div{background:var(--bg);padding:20px 22px}
 .hero-meta b{display:block;font-size:30px;font-weight:800;letter-spacing:-.03em}
 .hero-meta span{color:var(--dim);font-size:13px}
-.mark-float{position:absolute;right:3%;top:50%;transform:translateY(-50%);width:min(24vw,320px);opacity:.9;z-index:1;filter:drop-shadow(0 30px 80px rgba(0,194,203,.35))}
+.mark-float{position:absolute;right:24px;top:50%;transform:translateY(-50%);width:clamp(140px,14vw,200px);z-index:1;filter:drop-shadow(0 24px 60px rgba(0,194,203,.3))}
 .mark-float img{width:100%;height:auto;animation:float 9s ease-in-out infinite}
 @keyframes float{50%{transform:translateY(-18px) rotate(-2deg)}}
-@media (max-width:1180px){.mark-float{display:none}}
+@media (max-width:1180px){.mark-float{width:150px;top:0;transform:none;opacity:.35}}
+@media (max-width:760px){.mark-float{position:relative;right:auto;width:84px;opacity:1;margin-bottom:28px}.mark-float img{animation:none}}
 @media (max-width:560px){.hero-meta{grid-template-columns:1fr}}
 
 /* marquee */
@@ -143,7 +145,7 @@ h2 .serif{color:var(--brand-2)}
 
 /* verticals */
 .verts{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;gap:1px;background:var(--line)}
-.vert{background:var(--bg);padding:30px 26px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;transition:background .3s}
+.vert{background:var(--bg-2);padding:30px 26px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;transition:background .3s}
 .vert:hover{background:#0c1416}
 .vert svg{width:22px;height:22px;color:var(--brand)}
 .vert b{font-size:19px;font-weight:700;letter-spacing:-.01em}
@@ -151,7 +153,7 @@ h2 .serif{color:var(--brand-2)}
 
 /* founder */
 .founder{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
-.portrait{position:sticky;top:120px;aspect-ratio:4/5;border-radius:24px;border:1px solid var(--line);overflow:hidden;
+.portrait{position:sticky;background-color:var(--bg-2);top:120px;aspect-ratio:4/5;border-radius:24px;border:1px solid var(--line);overflow:hidden;
   background:radial-gradient(circle at 30% 20%,rgba(0,194,203,.35),transparent 55%),linear-gradient(160deg,#12181b,#0a0b0d);display:flex;flex-direction:column;justify-content:space-between;padding:28px}
 .portrait img{width:38%;height:auto;opacity:.95}
 .portrait .who b{display:block;font-size:26px;letter-spacing:-.02em}
@@ -191,6 +193,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 .giant{font-size:clamp(80px,22vw,320px);font-weight:800;letter-spacing:-.06em;line-height:.8;text-align:center;
   background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,0));-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none;padding-top:40px;overflow:hidden}
 
+.promises{list-style:none;margin-top:26px;display:grid;gap:10px;max-width:560px}
+.promises li{display:flex;gap:12px;color:var(--text);font-size:16px}
+.promises li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:rgba(0,194,203,.15) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300c2cb' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+.svc{border-top:1px solid var(--line-2)}
+.svc-row{display:grid;grid-template-columns:70px 1.1fr 1.2fr 1.6fr;gap:28px;align-items:baseline;padding:34px 0;border-bottom:1px solid var(--line-2);transition:background .3s}
+.svc-row:hover{background:linear-gradient(90deg,rgba(0,194,203,.05),transparent)}
+.svc-row .n{color:var(--brand)}
+.svc-row h3{font-size:clamp(24px,2.4vw,32px);letter-spacing:-.03em;font-weight:700}
+.svc-row p{color:var(--muted)}
+.svc-row ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.svc-row li{font-size:13px;padding:6px 12px;border:1px solid var(--line-2);border-radius:999px;color:var(--muted)}
+@media (max-width:900px){.svc-row{grid-template-columns:1fr;gap:12px}}
+.cta-band{margin-top:56px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:28px 32px;border-radius:var(--r);border:1px solid rgba(0,194,203,.3);background:linear-gradient(120deg,rgba(0,194,203,.1),transparent 70%)}
+.cta-band b{display:block;font-size:22px;letter-spacing:-.02em}
+.cta-band span{color:var(--muted)}
+.fit{margin-top:48px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.fit ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.fit li{padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:15px}
 /* reveal */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .rv.in{opacity:1;transform:none}
@@ -209,10 +229,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 <header class="nav" id="nav">
   <div class="nav-inner">
     <div class="bar">
-      <a href="#top" class="logo" aria-label="PICKSIL home"><span class="crop"><img src="assets/picksil-mark.svg" alt="" width="17" height="24"></span>PICKSIL</a>
+      <a href="#top" class="logo" aria-label="PICKSIL home"><img src="assets/picksil-p.png" alt="PICKSIL" height="28" style="height:28px;width:auto"></a>
       <nav class="links" aria-label="Primary">
         <a href="#philosophy">Philosophy</a>
         <a href="#framework">Framework</a>
+        <a href="#services">Services</a>
         <a href="#experience">Experience</a>
         <a href="#founder">Founder</a>
       </nav>
@@ -226,6 +247,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 <div class="drawer" id="drawer" aria-hidden="true">
   <a href="#philosophy">Philosophy</a>
   <a href="#framework">Framework</a>
+  <a href="#services">Services</a>
   <a href="#experience">Experience</a>
   <a href="#founder">Founder</a>
   <a href="#contact" class="btn btn-primary">Start a project</a>
@@ -236,13 +258,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
     <div class="gridlines" aria-hidden="true"></div>
     <div class="glow a" aria-hidden="true"></div>
     <div class="glow b" aria-hidden="true"></div>
-    <div class="mark-float" aria-hidden="true"><img src="assets/picksil-mark.svg" alt="" width="380" height="535"></div>
     <div class="wrap">
-      <span class="pill mono rv"><span class="dot"></span>Independent brand strategist · Available worldwide</span>
+      <div class="mark-float" aria-hidden="true"><img src="assets/picksil-mark.svg" alt="" width="240" height="338"></div>
       <h1 class="rv d1">Brands built to be <span class="serif">picked.</span></h1>
       <p class="lede rv d2">I help bold businesses build distinct identities and digital presence. No agency bloat, no middlemen — direct, undivided collaboration with one strategist dedicated to making your brand undeniable.</p>
+      <ul class="promises rv d2"><li>Strategy before pixels — positioning, messaging, then identity</li><li>One senior strategist on your brand, start to finish</li></ul>
       <div class="cta-row rv d3">
-        <a href="#contact" class="btn btn-primary">Start a project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#contact" class="btn btn-primary">Book a discovery call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a href="#framework" class="btn btn-ghost">See the framework</a>
       </div>
       <div class="hero-meta rv d3">
@@ -330,7 +352,28 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
     </div>
   </section>
 
-  <section id="experience">
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow mono rv">Services</p>
+          <h2 class="rv d1">What you <span class="serif">get.</span></h2>
+        </div>
+        <p class="rv d2">Clear scopes, concrete deliverables. Take the full journey or start with the piece you need most.</p>
+      </div>
+      <div class="svc">
+        <article class="svc-row rv"><span class="n mono">01</span><h3>Brand Strategy</h3><p>Know exactly who you're for and why you win.</p><ul><li>Brand audit & research</li><li>Positioning statement</li><li>Messaging & tone of voice</li><li>Naming support</li></ul></article>
+        <article class="svc-row rv"><span class="n mono">02</span><h3>Brand Identity</h3><p>A visual system that's recognisable everywhere.</p><ul><li>Logo & marks</li><li>Color & typography</li><li>Brand guidelines</li><li>Packaging design</li></ul></article>
+        <article class="svc-row rv"><span class="n mono">03</span><h3>Digital Presence</h3><p>Launch online with consistency and intent.</p><ul><li>Website design & build</li><li>Social templates</li><li>Pitch & sales collateral</li><li>Launch assets</li></ul></article>
+      </div>
+      <div class="cta-band rv">
+        <div><b>Not sure where to start?</b><span>A free 30-minute call to map what your brand needs next.</span></div>
+        <a href="#contact" class="btn btn-primary">Book a discovery call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" style="background:var(--bg-2);border-block:1px solid var(--line)">
     <div class="wrap">
       <div class="head">
         <div>
@@ -349,10 +392,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
         <div class="vert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 8-6-16-3 8H2"/></svg><b>Health & Tech</b></div>
         <div class="vert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c-1-4 1-9 7-14 1 4 0 7-2 9M12 5c5 2 7 7 7 7s-3 3-7 2"/><path d="M4 20l4-4"/></svg><b>Startups</b></div>
       </div>
+      <div class="fit rv">
+        <p class="mono" style="color:var(--dim)">Best fit for</p>
+        <ul><li>Founders launching something new</li><li>Businesses outgrowing their brand</li><li>Teams entering a new market</li><li>Leaders who value strategy over trends</li></ul>
+      </div>
     </div>
   </section>
 
-  <section id="founder" style="background:var(--bg-2);border-block:1px solid var(--line)">
+  <section id="founder">
     <div class="wrap founder">
       <div class="portrait rv">
         <img src="assets/picksil-mark.svg" alt="" width="120" height="170">
