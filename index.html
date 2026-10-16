@@ -196,9 +196,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 .promises{list-style:none;margin-top:26px;display:grid;gap:10px;max-width:560px}
 .promises li{display:flex;gap:12px;color:var(--text);font-size:16px}
 .promises li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:rgba(0,194,203,.15) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300c2cb' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
-.svc{border-top:1px solid var(--line-2)}
-.svc-row{display:grid;grid-template-columns:70px 1.1fr 1.2fr 1.6fr;gap:28px;align-items:baseline;padding:34px 0;border-bottom:1px solid var(--line-2);transition:background .3s}
-.svc-row:hover{background:linear-gradient(90deg,rgba(0,194,203,.05),transparent)}
+.svc{border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden;background:var(--line-2);display:grid;gap:1px}
+.svc-row{display:grid;grid-template-columns:70px 1.1fr 1.2fr 1.6fr;gap:28px;align-items:baseline;padding:34px clamp(20px,3vw,40px);background:var(--bg);transition:background .3s}
+.svc-row:hover{background:#0b1012}
 .svc-row .n{color:var(--brand)}
 .svc-row h3{font-size:clamp(24px,2.4vw,32px);letter-spacing:-.03em;font-weight:700}
 .svc-row p{color:var(--muted)}
@@ -211,6 +211,31 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 .fit{margin-top:48px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
 .fit ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
 .fit li{padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:15px}
+/* hairline lattice (inspired by 21st.dev bento) */
+.lattice{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;overflow:hidden;border:1px solid var(--line-2);border-radius:var(--r);background:var(--line-2)}
+.cell{background:var(--bg);padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:14px;transition:background .3s}
+.cell:hover{background:#0b1012}
+.lbl{color:var(--dim)}
+.c-quote{grid-column:span 4;grid-row:span 2;justify-content:space-between;background:linear-gradient(150deg,#0e2a2c 0%,var(--bg) 60%)}
+.c-quote blockquote{font-family:"Instrument Serif",serif;font-size:clamp(32px,4.2vw,58px);line-height:1.08;letter-spacing:-.02em;max-width:16ch}
+.c-quote blockquote em{color:var(--brand-2)}
+.by{display:flex;align-items:center;gap:12px}
+.by cite{display:block;font-style:normal;font-weight:600}
+.by .mono{font-size:11px;color:var(--dim)}
+.av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(0,194,203,.12);color:var(--brand);font-weight:700;border:1px solid rgba(0,194,203,.3)}
+.c-metric{grid-column:span 2}
+.num{font-family:"JetBrains Mono",monospace;font-size:clamp(40px,4.4vw,60px);font-weight:500;letter-spacing:-.04em;font-variant-numeric:tabular-nums;line-height:1}
+.c-metric p:last-child{color:var(--muted);font-size:15px}
+.c-method{grid-column:span 6;flex-direction:row;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.c-method h3{font-size:clamp(22px,2.2vw,28px);letter-spacing:-.025em;margin:8px 0 8px}
+.c-method p:not(.lbl){color:var(--muted);max-width:44ch}
+.c-list{grid-column:span 6}
+.c-list ul{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.c-list li{display:grid;gap:2px}
+.c-list li b{font-size:15px}
+.c-list li span{color:var(--muted);font-size:14px}
+@media (max-width:960px){.c-quote,.c-metric,.c-method,.c-list{grid-column:span 6;grid-row:auto}.c-metric{grid-column:span 3}.c-list ul{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.c-metric{grid-column:span 6}.c-list ul{grid-template-columns:1fr}}
 /* reveal */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .rv.in{opacity:1;transform:none}
@@ -291,30 +316,26 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
         </div>
         <p class="rv d2">In a saturated market, blending in is the greatest risk you can take. Brands must be bold enough to stand out and strategic enough to stay relevant.</p>
       </div>
-      <div class="bento">
-        <article class="card c-big rv">
-          <p class="mono" style="color:var(--brand);margin-bottom:auto">Manifesto</p>
-          <p class="quote">We don't just design logos. We <span class="serif">engineer</span> digital presence.</p>
+      <div class="lattice">
+        <article class="cell c-quote rv">
+          <p class="mono lbl">Manifesto</p>
+          <blockquote>We don't just design logos. We <em>engineer</em> digital presence.</blockquote>
+          <div class="by"><span class="av" aria-hidden="true">H</span><div><cite>Hassan Zarroug</cite><span class="mono">Founder · PICKSIL</span></div></div>
         </article>
-        <article class="card c-sm rv d1">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></div>
-          <h3>Strategy first</h3>
-          <p>Design without strategy is decoration. Identity, messaging and perception are set before a single pixel.</p>
+        <article class="cell c-metric rv d1"><p class="mono lbl">Since</p><b class="num">2021</b><p>Building brands across the Gulf and beyond.</p></article>
+        <article class="cell c-metric rv d2"><p class="mono lbl">Industries</p><b class="num">8+</b><p>From startups to B2B enterprises.</p></article>
+        <article class="cell c-method rv">
+          <div><p class="mono lbl">The method</p><h3>Strategy → Identity → Launch</h3><p>Every engagement moves from insight to a finished brand in market, in that order.</p></div>
+          <a href="#framework" class="btn btn-ghost">See the framework <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
-        <article class="card c-third rv">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg></div>
-          <h3>Ambition</h3>
-          <p>I partner with founders who aren't afraid to challenge the status quo and build something lasting.</p>
-        </article>
-        <article class="card c-third rv d1">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-          <h3>Clarity</h3>
-          <p>Cut through the noise — one clear message, one consistent visual language, fiercely goal-focused.</p>
-        </article>
-        <article class="card c-third rv d2">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-          <h3>Direct partnership</h3>
-          <p>Agency-level depth with the agility of an independent. You work with me — start to finish.</p>
+        <article class="cell c-list rv d1">
+          <p class="mono lbl">Principles</p>
+          <ul>
+            <li><b>Strategy first</b><span>Positioning and messaging are set before a single pixel.</span></li>
+            <li><b>Ambition</b><span>Partnering with founders who challenge the status quo.</span></li>
+            <li><b>Clarity</b><span>One clear message, one consistent visual language.</span></li>
+            <li><b>Direct</b><span>You work with me, start to finish. No middlemen.</span></li>
+          </ul>
         </article>
       </div>
     </div>
