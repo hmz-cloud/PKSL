@@ -160,10 +160,9 @@ h2 .serif{color:var(--brand-2)}
 
 /* founder */
 .founder{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:72px;align-items:start}
-.portrait{position:sticky;top:120px;aspect-ratio:4/5;border-radius:20px;border:1px solid var(--line);overflow:hidden;background:var(--bg);display:flex;flex-direction:column;justify-content:flex-end;padding:22px;isolation:isolate}
-.portrait .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;z-index:-3;filter:contrast(1.04)}
-.portrait::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(70% 55% at 30% 15%,rgba(0,194,203,.28),transparent 70%);mix-blend-mode:screen}
-.portrait::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,var(--bg) 0%,rgba(7,8,10,.85) 18%,transparent 48%),linear-gradient(to right,rgba(7,8,10,.35),transparent 30%)}
+.portrait{position:sticky;top:120px;aspect-ratio:1241/1859;border-radius:20px;border:1px solid var(--line);overflow:hidden;background:var(--bg);display:flex;flex-direction:column;justify-content:flex-end;padding:22px;isolation:isolate}
+.portrait .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.portrait::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(7,8,10,.8) 0%,rgba(7,8,10,.35) 14%,transparent 32%)}
 .portrait .mk{position:absolute;top:18px;right:18px;width:26px;height:auto;opacity:.9}
 .portrait .who b{display:block;font-size:21px;letter-spacing:-.02em}
 .portrait .who span{color:var(--muted);font-size:14px}
@@ -174,7 +173,7 @@ h2 .serif{color:var(--brand-2)}
 .timeline strong{color:var(--text);font-weight:600}
 .bigtext{font-size:clamp(22px,2.2vw,28px);line-height:1.4;letter-spacing:-.015em;color:var(--text);font-weight:500;margin-top:26px}
 .bigtext em{font-family:"Instrument Serif",serif;color:var(--brand-2);font-size:1.12em}
-@media (max-width:900px){.founder{grid-template-columns:1fr}.portrait{position:relative;top:0;aspect-ratio:4/5;max-width:300px;margin-inline:auto;width:100%}}
+@media (max-width:900px){.founder{grid-template-columns:1fr}.portrait{position:relative;top:0;aspect-ratio:1241/1859;max-width:300px;margin-inline:auto;width:100%}}
 @media (max-width:520px){.timeline li{grid-template-columns:1fr;gap:6px}}
 
 /* contact */
@@ -432,7 +431,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   <section id="founder">
     <div class="wrap founder">
       <div class="portrait rv">
-        <img class="ph" src="assets/hassan.webp" alt="Portrait of Hassan Zarroug, founder of PICKSIL" width="960" height="1200" loading="lazy">
+        <img class="ph" src="assets/hassan.webp" alt="Portrait of Hassan Zarroug, founder of PICKSIL" width="960" height="1438" loading="lazy">
         <img class="mk" src="assets/picksil-p.png" alt="" width="34" height="33">
         <div class="who"><b>Hassan Zarroug</b><span>Founder & Independent Brand Strategist</span></div>
       </div>
