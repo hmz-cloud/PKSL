@@ -159,6 +159,18 @@ h2 .serif{color:var(--brand-2)}
 .step.in .bar-fill{width:100%}
 @media (max-width:860px){.steps{grid-template-columns:1fr;gap:48px}}
 
+/* signal system */
+.signal{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden}
+.sig-col{background:var(--bg);padding:clamp(22px,2.6vw,34px);display:flex;flex-direction:column;gap:20px;transition:background .3s}
+.sig-col:hover{background:#0b1012}
+.sig-col .stage{display:flex;align-items:center;gap:10px;color:var(--brand)}
+.sig-col .stage::before{content:"";width:18px;height:1px;background:var(--brand);flex:none}
+.sig-phase{display:grid;grid-template-columns:30px 1fr;gap:12px;padding-top:18px;border-top:1px solid var(--line)}
+.sig-phase .n{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--dim);padding-top:4px}
+.sig-phase b{display:block;font-size:19px;font-weight:700;letter-spacing:-.02em;margin-bottom:4px}
+.sig-phase p{color:var(--muted);font-size:15px;line-height:1.5}
+@media (max-width:860px){.signal{grid-template-columns:1fr}}
+
 /* verticals */
 .verts{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;gap:1px;background:var(--line)}
 .vert{background:var(--bg-2);padding:30px 26px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;transition:background .3s}
@@ -432,7 +444,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <a href="#top" class="logo" aria-label="PICKSIL home"><img src="assets/picksil-p.png" alt="PICKSIL" height="28" style="height:28px;width:auto"></a>
       <nav class="links" aria-label="Primary">
         <a href="#philosophy">Philosophy</a>
-        <a href="#framework">Framework</a>
+        <a href="#framework">Signal System</a>
         <a href="#services">Services</a>
         <a href="#experience">Experience</a>
         <a href="#founder">Founder</a>
@@ -446,7 +458,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 </header>
 <div class="drawer" id="drawer" aria-hidden="true">
   <a href="#philosophy">Philosophy</a>
-  <a href="#framework">Framework</a>
+  <a href="#framework">Signal System</a>
   <a href="#services">Services</a>
   <a href="#experience">Experience</a>
   <a href="#founder">Founder</a>
@@ -465,7 +477,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <ul class="promises rv d2"><li>Strategy before pixels — positioning, messaging, then identity</li><li>One senior strategist on your brand, start to finish</li></ul>
       <div class="cta-row rv d3">
         <a href="#contact" class="btn btn-primary">Book a discovery call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="#framework" class="btn btn-ghost">See the framework</a>
+        <a href="#framework" class="btn btn-ghost">See the Signal System</a>
       </div>
       <div class="hero-meta rv d3">
         <div><b>2021</b><span>PICKSIL founded</span></div>
@@ -500,8 +512,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
         <article class="cell c-metric rv d1"><p class="mono lbl">Since</p><b class="num">2021</b><p>Building brands across the Gulf and beyond.</p></article>
         <article class="cell c-metric rv d2"><p class="mono lbl">Industries</p><b class="num">8+</b><p>From startups to B2B enterprises.</p></article>
         <article class="cell c-method rv">
-          <div><p class="mono lbl">The method</p><h3>Strategy → Identity → Launch</h3><p>Every engagement moves from insight to a finished brand in market, in that order.</p></div>
-          <a href="#framework" class="btn btn-ghost">See the framework <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div><p class="mono lbl">The method</p><h3>Hear → Set → Send</h3><p>Every engagement runs on the Signal System: six phases that move from insight to a finished brand in market, in that order.</p></div>
+          <a href="#framework" class="btn btn-ghost">See the Signal System <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
         <article class="cell c-list rv d1">
           <p class="mono lbl">Principles</p>
@@ -521,28 +533,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <div class="head">
         <div>
           <p class="eyebrow mono rv">The methodology</p>
-          <h2 class="rv d1">A three-phase <span class="serif">framework.</span></h2>
+          <h2 class="rv d1">The Signal <span class="serif">System.</span></h2>
         </div>
-        <p class="rv d2">Every engagement moves from insight to identity to launch, so what ships online is grounded in a strategy that holds.</p>
+        <p class="rv d2">Six phases in three stages — my own method for finding what a business actually stands for, deciding what it should say, and building the brand that carries it.</p>
       </div>
-      <div class="steps">
-        <div class="step rv"><span class="bar-fill"></span>
-          <span class="n">01 / Strategy</span>
-          <h3>Brand Strategy</h3>
-          <p>The blueprint for growth — who you serve, where you win, and what you say.</p>
-          <ul><li>Audience research</li><li>Competitive analysis</li><li>Positioning</li><li>Messaging</li></ul>
+      <div class="signal rv">
+        <div class="sig-col">
+          <p class="stage mono">Hear the signal</p>
+          <div class="sig-phase"><span class="n">01</span><div><b>Listen</b><p>Founder, team and customer interviews. What is already being said, before anyone decides what should be.</p></div></div>
+          <div class="sig-phase"><span class="n">02</span><div><b>Decode</b><p>Category and competitors read side by side. What is true and distinctive, and what is just noise.</p></div></div>
         </div>
-        <div class="step rv d1"><span class="bar-fill"></span>
-          <span class="n">02 / Identity</span>
-          <h3>Visual Identity</h3>
-          <p>Strategy translated into a system people recognise instantly.</p>
-          <ul><li>Logo design</li><li>Typography</li><li>Color palette</li><li>Style guide</li></ul>
+        <div class="sig-col">
+          <p class="stage mono">Set the signal</p>
+          <div class="sig-phase"><span class="n">03</span><div><b>Position</b><p>The strategic choice: who it is for, what it stands against, the ground it can own.</p></div></div>
+          <div class="sig-phase"><span class="n">04</span><div><b>Voice</b><p>The position turned into language — message hierarchy, tone, and the lines you repeat.</p></div></div>
         </div>
-        <div class="step rv d2"><span class="bar-fill"></span>
-          <span class="n">03 / Launch</span>
-          <h3>Digital Execution</h3>
-          <p>Bringing the brand to market consistently, everywhere it appears.</p>
-          <ul><li>Website design</li><li>Collateral</li><li>Packaging</li><li>Digital assets</li></ul>
+        <div class="sig-col">
+          <p class="stage mono">Send the signal</p>
+          <div class="sig-phase"><span class="n">05</span><div><b>Shape</b><p>Strategy made visible: identity system, type, colour, and the site the brand lives in.</p></div></div>
+          <div class="sig-phase"><span class="n">06</span><div><b>Transmit</b><p>Launch and rollout, with guidelines your team can keep running without me.</p></div></div>
         </div>
       </div>
     </div>
