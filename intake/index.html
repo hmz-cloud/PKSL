@@ -62,12 +62,18 @@ input:focus,textarea:focus,select:focus,button:focus-visible{outline:2px solid v
 .out.show{display:grid}
 .out textarea{min-height:340px;font-size:15px}
 .addr{font-weight:700;word-break:break-all}
+.band{background:#0b1214;border-radius:18px;padding:clamp(24px,5vw,40px);text-align:center}
+.band[hidden]{display:none}
 footer{color:var(--muted);font-size:13px;text-align:center}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <main class="wrap">
+
+  <div id="clientBand" class="band" hidden>
+    <img id="clientLogo" alt="" width="200" height="200" style="width:min(200px,60%);height:auto;display:block;margin:0 auto">
+  </div>
 
   <header class="bi">
     <p class="eyebrow">PICKSIL · Brand strategy intake</p>
@@ -302,6 +308,16 @@ footer{color:var(--muted);font-size:13px;text-align:center}
   if (client && clientLine) {
     clientLine.textContent = 'Prepared for ' + client + ' · مُعد لـ ' + client;
     clientLine.hidden = false;
+  }
+  // Client logos, keyed by lowercase client name. Only known clients get a logo band.
+  var logos = { 'lolly pure': 'lolly-pure-logo.svg' };
+  var band = document.getElementById('clientBand');
+  var logoKey = client.toLowerCase();
+  if (logoKey && logos[logoKey] && band) {
+    var logoImg = document.getElementById('clientLogo');
+    logoImg.src = logos[logoKey];
+    logoImg.alt = client + ' logo';
+    band.hidden = false;
   }
 
   function val(id){ return (document.getElementById(id).value || '').trim(); }
