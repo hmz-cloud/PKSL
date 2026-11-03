@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Brand Strategy Intake · PICKSIL</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800;900&display=swap">
+<style>
+/* Layout: a single guided form in numbered sections, a live positioning sentence, and a generated brief to copy. */
+:root{
+  --bg:#f4f7f7; --surface:#ffffff; --fg:#0b1214; --muted:#4b5a5e; --line:#d6e0e2;
+  --accent:#00818a; --accent-ink:#ffffff; --field:#ffffff; --soft:#e6f2f3;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#060809; --surface:#0d1113; --fg:#d2fafd; --muted:#9fb6ba; --line:#1d2a2d;
+    --accent:#00c5d4; --accent-ink:#002a2c; --field:#0a0d0f; --soft:#0b1f22; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#060809; --surface:#0d1113; --fg:#d2fafd; --muted:#9fb6ba; --line:#1d2a2d;
+  --accent:#00c5d4; --accent-ink:#002a2c; --field:#0a0d0f; --soft:#0b1f22; color-scheme: dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font-family:Cairo,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.6;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 64px}
+.wrap{max-width:880px;margin:0 auto;display:grid;gap:32px}
+.bi{display:grid;gap:4px}
+.bi [lang="ar"]{direction:rtl;text-align:right;color:var(--muted)}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-size:clamp(32px,5.5vw,56px);line-height:1.1;margin:8px 0 0;font-weight:900;text-wrap:balance}
+h2{font-size:clamp(20px,2.6vw,26px);margin:0;font-weight:800}
+p{margin:0}
+.lede{color:var(--muted);max-width:62ch;font-size:17px}
+.section{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,4vw,34px);display:grid;gap:22px;min-width:0}
+.sec-head{display:flex;gap:14px;align-items:flex-start}
+.num{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--soft);color:var(--accent);font-weight:800;font-size:14px}
+.field{display:grid;gap:8px;min-width:0}
+label,.legend{font-weight:600;font-size:15px}
+.label-ar{color:var(--muted);font-weight:600;font-size:14px;direction:rtl;text-align:right}
+.hint{color:var(--muted);font-size:13px}
+input[type=text],textarea,select{width:100%;font:inherit;color:var(--fg);background:var(--field);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-height:46px}
+textarea{min-height:96px;resize:vertical}
+input:focus,textarea:focus,select:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px}
+.slider{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:center}
+.slider input{width:100%;accent-color:var(--accent)}
+.slider .end{font-size:13px;color:var(--muted);min-width:0}
+.slider .end.r{text-align:right}
+.slider .end.ar{direction:rtl}
+.slider output{font-weight:700;color:var(--accent);min-width:2ch;text-align:center}
+.preview{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:8px}
+.preview p{font-size:18px;line-height:1.55}
+.preview .fill{color:var(--accent);font-weight:700}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{appearance:none;border:0;border-radius:999px;background:var(--accent);color:var(--accent-ink);font:inherit;font-weight:700;padding:14px 22px;min-height:46px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.out{display:none;gap:14px}
+.out.show{display:grid}
+.out textarea{min-height:340px;font-size:15px}
+.addr{font-weight:700;word-break:break-all}
+footer{color:var(--muted);font-size:13px;text-align:center}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="bi">
+    <p class="eyebrow">PICKSIL · Brand strategy intake</p>
+    <h1>Let’s map your brand</h1>
+    <p id="clientLine" class="hint" hidden style="font-size:16px;font-weight:600;color:var(--accent)"></p>
+    <div class="bi">
+      <p class="lede" lang="en">Answer what you can. Short answers are fine, and you can skip anything you are unsure about. At the end we turn your answers into a one-page brief.</p>
+      <p class="lede" lang="ar" dir="rtl" style="text-align:right">أجب بما تستطيع، والإجابات القصيرة مقبولة، ويمكنك تخطي أي سؤال لا تتأكد منه. في النهاية نحوّل إجاباتك إلى ملخص من صفحة واحدة.</p>
+    </div>
+  </header>
+
+  <form id="intake" class="wrap" style="gap:24px" novalidate>
+
+    <section class="section" aria-labelledby="s1">
+      <div class="sec-head">
+        <span class="num">01</span>
+        <div class="bi">
+          <h2 id="s1" lang="en">The business</h2>
+          <h2 lang="ar" dir="rtl" style="text-align:right;color:var(--muted);font-size:17px">النشاط</h2>
+        </div>
+      </div>
+      <div class="two">
+        <div class="field">
+          <div class="bi"><label for="biz" lang="en">Business name</label><span class="label-ar">اسم النشاط</span></div>
+          <input type="text" id="biz" name="biz">
+        </div>
+        <div class="field">
+          <div class="bi"><label for="sells" lang="en">What do you sell, in one line?</label><span class="label-ar">ماذا تبيع، في سطر واحد؟</span></div>
+          <input type="text" id="sells" name="sells">
+        </div>
+      </div>
+      <div class="field">
+        <div class="bi"><label for="why" lang="en">Why did you start it?</label><span class="label-ar">لماذا بدأته؟</span></div>
+        <textarea id="why" name="why"></textarea>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="s2">
+      <div class="sec-head">
+        <span class="num">02</span>
+        <div class="bi">
+          <h2 id="s2" lang="en">Your customers</h2>
+          <h2 lang="ar" dir="rtl" style="text-align:right;color:var(--muted);font-size:17px">عملاؤك</h2>
+        </div>
+      </div>
+      <div class="field">
+        <div class="bi"><label for="who" lang="en">Who buys from you today? Describe the one you like working with most.</label><span class="label-ar">من يشتري منك اليوم؟ صف العميل الذي تحب العمل معه أكثر.</span></div>
+        <textarea id="who" name="who"></textarea>
+      </div>
+      <div class="field">
+        <div class="bi"><label for="notfor" lang="en">Who is it NOT for? Saying no to someone is part of positioning.</label><span class="label-ar">لمن ليس مناسباً؟ قول لا لشخص ما جزء من التموضع.</span></div>
+        <textarea id="notfor" name="notfor"></textarea>
+      </div>
+      <div class="field">
+        <div class="bi"><label for="reason" lang="en">Why do they choose you over the alternatives?</label><span class="label-ar">لماذا يختارونك بدلاً من البدائل؟</span></div>
+        <textarea id="reason" name="reason"></textarea>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="s3">
+      <div class="sec-head">
+        <span class="num">03</span>
+        <div class="bi">
+          <h2 id="s3" lang="en">Competitors</h2>
+          <h2 lang="ar" dir="rtl" style="text-align:right;color:var(--muted);font-size:17px">المنافسون</h2>
+        </div>
+      </div>
+      <div class="two">
+        <div class="field">
+          <div class="bi"><label for="c1" lang="en">Competitor one</label><span class="label-ar">المنافس الأول</span></div>
+          <input type="text" id="c1" name="c1">
+        </div>
+        <div class="field">
+          <div class="bi"><label for="c2" lang="en">Competitor two</label><span class="label-ar">المنافس الثاني</span></div>
+          <input type="text" id="c2" name="c2">
+        </div>
+        <div class="field">
+          <div class="bi"><label for="c3" lang="en">Competitor three</label><span class="label-ar">المنافس الثالث</span></div>
+          <input type="text" id="c3" name="c3">
+        </div>
+      </div>
+      <div class="field">
+        <div class="bi"><label for="sameas" lang="en">What do they all say that sounds the same?</label><span class="label-ar">ما الذي يقولونه جميعاً وكأنه نسخة واحدة؟</span></div>
+        <textarea id="sameas" name="sameas"></textarea>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="s4">
+      <div class="sec-head">
+        <span class="num">04</span>
+        <div class="bi">
+          <h2 id="s4" lang="en">Positioning</h2>
+          <h2 lang="ar" dir="rtl" style="text-align:right;color:var(--muted);font-size:17px">التموضع</h2>
+        </div>
+      </div>
+      <div class="bi">
+        <p class="hint" lang="en">Fill in the sentence. It updates as you type.</p>
+        <p class="hint" lang="ar" dir="rtl" style="text-align:right">املأ الجملة. تتحدث تلقائياً مع كتابتك.</p>
+      </div>
+      <div class="two">
+        <div class="field">
+          <div class="bi"><label for="p-who" lang="en">For (who)</label><span class="label-ar">لـ (من)</span></div>
+          <input type="text" id="p-who" name="p-who" data-p="who">
+        </div>
+        <div class="field">
+          <div class="bi"><label for="p-cat" lang="en">(your category)</label><span class="label-ar">(فئتك)</span></div>
+          <input type="text" id="p-cat" name="p-cat" data-p="cat">
+        </div>
+        <div class="field">
+          <div class="bi"><label for="p-benefit" lang="en">that (the main benefit)</label><span class="label-ar">التي (الفائدة الرئيسية)</span></div>
+          <input type="text" id="p-benefit" name="p-benefit" data-p="benefit">
+        </div>
+        <div class="field">
+          <div class="bi"><label for="p-proof" lang="en">because (your proof)</label><span class="label-ar">لأن (دليلك)</span></div>
+          <input type="text" id="p-proof" name="p-proof" data-p="proof">
+        </div>
+      </div>
+      <div class="preview" aria-live="polite">
+        <div class="bi"><span class="hint" lang="en">Your positioning sentence</span><span class="label-ar">جملة التموضع</span></div>
+        <p id="pline" lang="en">For <span class="fill" data-out="who">[who]</span>, <span data-out="name">[name]</span> is the <span class="fill" data-out="cat">[category]</span> that <span class="fill" data-out="benefit">[benefit]</span>, because <span class="fill" data-out="proof">[proof]</span>.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="s5">
+      <div class="sec-head">
+        <span class="num">05</span>
+        <div class="bi">
+          <h2 id="s5" lang="en">Voice and tone</h2>
+          <h2 lang="ar" dir="rtl" style="text-align:right;color:var(--muted);font-size:17px">الصوت والنبرة</h2>
+        </div>
+      </div>
+      <div class="field">
+        <div class="bi"><span class="legend" lang="en">Move each slider to where your brand sits.</span><span class="label-ar">حرّك كل مؤشر إلى المكان الذي تقع فيه علامتك.</span></div>
+        <div class="slider"><span class="end" lang="en">Formal</span><output for="t1">3</output><span class="end r ar">رسمي</span></div>
+        <input type="range" id="t1" name="t1" min="1" max="5" value="3" aria-label="Formal to casual">
+        <div class="slider"><span class="end" lang="en">Serious</span><output for="t2">3</output><span class="end r ar">جاد</span></div>
+        <input type="range" id="t2" name="t2" min="1" max="5" value="3" aria-label="Serious to playful">
+        <div class="slider"><span class="end" lang="en">Premium</span><output for="t3">3</output><span class="end r ar">فاخر</span></div>
+        <input type="range" id="t3" name="t3" min="1" max="5" value="3" aria-label="Premium to accessible">
+      </div>
+      <div class="two">
+        <div class="field">
+          <div class="bi"><label for="words-yes" lang="en">Three words your brand should feel like</label><span class="label-ar">ثلاث كلمات يجب أن تشعر بها علامتك</span></div>
+          <input type="text" id="words-yes" name="words-yes">
+        </div>
+        <div class="field">
+          <div class="bi"><label for="words-no" lang="en">Three words it must never feel like</label><span class="label-ar">ثلاث كلمات يجب ألا تشبهها أبداً</span></div>
+          <input type="text" id="words-no" name="words-no">
+        </div>
+      </div>
+      <div class="field">
+        <div class="bi"><label for="say" lang="en">Phrases you already use, or want to own</label><span class="label-ar">عبارات تستخدمها أو تريد امتلاكها</span></div>
+        <textarea id="say" name="say"></textarea>
+      </div>
+      <div class="field">
+        <div class="bi"><label for="avoid" lang="en">Phrases or clichés to avoid</label><span class="label-ar">عبارات أو كليشيهات تريد تجنبها</span></div>
+        <textarea id="avoid" name="avoid"></textarea>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="s6">
+      <div class="sec-head">
+        <span class="num">06</span>
+        <div class="bi">
+          <h2 id="s6" lang="en">Goals</h2>
+          <h2 lang="ar" dir="rtl" style="text-align:right;color:var(--muted);font-size:17px">الأهداف</h2>
+        </div>
+      </div>
+      <div class="field">
+        <div class="bi"><label for="goal" lang="en">What must the brand achieve in the next 12 months?</label><span class="label-ar">ماذا يجب أن تحقق العلامة خلال 12 شهراً؟</span></div>
+        <textarea id="goal" name="goal"></textarea>
+      </div>
+      <div class="field">
+        <div class="bi"><label for="block" lang="en">What is the biggest thing holding the business back right now?</label><span class="label-ar">ما أكبر شيء يعيق النشاط الآن؟</span></div>
+        <textarea id="block" name="block"></textarea>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button class="btn" type="submit">
+        <span lang="en">Create my brief</span>
+        <span lang="ar" dir="rtl">أنشئ ملخصي</span>
+      </button>
+    </div>
+
+    <section class="out section" id="out" aria-live="polite" aria-labelledby="s7">
+      <div class="sec-head">
+        <span class="num">07</span>
+        <div class="bi">
+          <h2 id="s7" lang="en">Your brief</h2>
+          <h2 lang="ar" dir="rtl" style="text-align:right;color:var(--muted);font-size:17px">ملخصك</h2>
+        </div>
+      </div>
+      <div class="bi">
+        <span class="hint" lang="en">Copy this and send it to <span class="addr">hello@picksil.co</span>. Or reply to the message that brought you here.</span>
+        <span class="hint" lang="ar" dir="rtl" style="text-align:right">انسخ هذا وأرسله إلى <span class="addr">hello@picksil.co</span>، أو رد على الرسالة التي أوصلتك إلى هنا.</span>
+      </div>
+      <textarea id="brief" readonly aria-label="Your brand brief, ready to copy"></textarea>
+      <div class="actions">
+        <button class="btn" type="button" id="copyBtn">
+          <span lang="en">Copy brief</span>
+          <span lang="ar" dir="rtl">نسخ الملخص</span>
+        </button>
+        <span id="copyNote" class="hint" role="status"></span>
+      </div>
+    </section>
+
+  </form>
+
+  <footer class="bi">
+    <span lang="en">Designed by PICKSIL · www.picksil.co</span>
+    <span lang="ar" dir="rtl">مصمّم بواسطة PICKSIL · www.picksil.co</span>
+  </footer>
+
+</main>
+
+<script>
+(function(){
+  var form = document.getElementById('intake');
+  var out = document.getElementById('out');
+  var brief = document.getElementById('brief');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyNote = document.getElementById('copyNote');
+  var tone = ['very formal','formal','balanced','casual','very casual'];
+  var seriousTone = ['very serious','serious','balanced','playful','very playful'];
+  var premium = ['luxury','premium','balanced','accessible','very accessible'];
+
+  // Client name comes from the link, e.g. intake/?client=Loly%20Pure. Shown as text only.
+  var client = '';
+  try { client = (new URLSearchParams(location.search).get('client') || '').replace(/\s+/g, ' ').trim().slice(0, 60); } catch(_) {}
+  var clientLine = document.getElementById('clientLine');
+  if (client && clientLine) {
+    clientLine.textContent = 'Prepared for ' + client + ' · مُعد لـ ' + client;
+    clientLine.hidden = false;
+  }
+
+  function val(id){ return (document.getElementById(id).value || '').trim(); }
+  function text(v, fallback){ return v || fallback; }
+
+  // Live positioning sentence
+  function updatePosition(){
+    var who = val('p-who'), cat = val('p-cat'), ben = val('p-benefit'), proof = val('p-proof');
+    var name = val('biz');
+    var map = { who: who || '[who]', cat: cat || '[category]', benefit: ben || '[benefit]', proof: proof || '[proof]', name: name || '[name]' };
+    document.querySelectorAll('[data-out]').forEach(function(el){ el.textContent = map[el.getAttribute('data-out')]; });
+  }
+  form.addEventListener('input', function(e){
+    if (e.target.id === 't1' || e.target.id === 't2' || e.target.id === 't3') {
+      var n = e.target.value, o = document.querySelector('output[for="' + e.target.id + '"]');
+      if (o) o.textContent = n;
+    }
+    updatePosition();
+  });
+  updatePosition();
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var t1 = Number(val('t1') || document.getElementById('t1').value);
+    var t2 = Number(document.getElementById('t2').value);
+    var t3 = Number(document.getElementById('t3').value);
+
+    var lines = [
+      'BRAND STRATEGY BRIEF',
+      '====================',
+      'Client: ' + (client || '(not given)'),
+      '',
+      '1. THE BUSINESS',
+      'Name: ' + text(val('biz'), '(not given)'),
+      'What we sell: ' + text(val('sells'), '(not given)'),
+      'Why it started: ' + text(val('why'), '(not given)'),
+      '',
+      '2. CUSTOMERS',
+      'Ideal customer: ' + text(val('who'), '(not given)'),
+      'Not for: ' + text(val('notfor'), '(not given)'),
+      'Why they choose us: ' + text(val('reason'), '(not given)'),
+      '',
+      '3. COMPETITORS',
+      'Competitors: ' + [val('c1'), val('c2'), val('c3')].filter(Boolean).join(', ') || '(not given)',
+      'What they all sound like: ' + text(val('sameas'), '(not given)'),
+      '',
+      '4. POSITIONING',
+      'For ' + text(val('p-who'), '[who]') + ', ' + text(val('biz'), '[name]') + ' is the ' + text(val('p-cat'), '[category]') + ' that ' + text(val('p-benefit'), '[benefit]') + ', because ' + text(val('p-proof'), '[proof]') + '.',
+      '',
+      '5. VOICE AND TONE',
+      'Formal to casual: ' + tone[t1 - 1] + ' (' + t1 + '/5)',
+      'Serious to playful: ' + seriousTone[t2 - 1] + ' (' + t2 + '/5)',
+      'Premium to accessible: ' + premium[t3 - 1] + ' (' + t3 + '/5)',
+      'Should feel like: ' + text(val('words-yes'), '(not given)'),
+      'Must never feel like: ' + text(val('words-no'), '(not given)'),
+      'Phrases to own: ' + text(val('say'), '(not given)'),
+      'Phrases to avoid: ' + text(val('avoid'), '(not given)'),
+      '',
+      '6. GOALS',
+      '12-month goal: ' + text(val('goal'), '(not given)'),
+      'Biggest blocker: ' + text(val('block'), '(not given)')
+    ];
+
+    brief.value = lines.join('\n');
+    out.classList.add('show');
+    copyNote.textContent = '';
+    out.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  copyBtn.addEventListener('click', function(){
+    brief.select();
+    var done = function(){ copyNote.textContent = 'Copied. · تم النسخ.'; };
+    var fail = function(){ copyNote.textContent = 'Select the text and copy it manually. · حدد النص وانسخه يدوياً.'; };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(brief.value).then(done, function(){
+          try { document.execCommand('copy') ? done() : fail(); } catch(_) { fail(); }
+        });
+      } else {
+        document.execCommand('copy') ? done() : fail();
+      }
+    } catch(_) { fail(); }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>The Signal System: Session Review</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800;900&display=swap">
+<style>
+/* Layout: one column of stacked stages, bilingual lines per block, feedback form below. */
+:root{
+  --bg:#f4f7f7; --surface:#ffffff; --fg:#0b1214; --muted:#4b5a5e; --line:#d6e0e2;
+  --accent:#00818a; --accent-ink:#ffffff; --field:#ffffff;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#060809; --surface:#0d1113; --fg:#d2fafd; --muted:#9fb6ba; --line:#1d2a2d;
+    --accent:#00c5d4; --accent-ink:#002a2c; --field:#0a0d0f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#060809; --surface:#0d1113; --fg:#d2fafd; --muted:#9fb6ba; --line:#1d2a2d;
+  --accent:#00c5d4; --accent-ink:#002a2c; --field:#0a0d0f; color-scheme: dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font-family:Cairo,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.6;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 64px}
+img{max-width:100%}
+.wrap{max-width:960px;margin:0 auto;display:grid;gap:40px}
+.bi{display:grid;gap:4px}
+.bi [lang="ar"]{direction:rtl;text-align:right;color:var(--muted)}
+.bi [lang="en"]{text-align:left}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-size:clamp(34px,6vw,64px);line-height:1.1;margin:8px 0 0;font-weight:900;text-wrap:balance}
+h2{font-size:clamp(22px,3vw,30px);margin:0;font-weight:800;text-wrap:balance}
+h3{font-size:18px;margin:0;font-weight:700}
+p{margin:0}
+.intro{font-size:18px;color:var(--muted);max-width:60ch}
+.stages{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;display:grid;gap:14px;align-content:start;min-width:0}
+.card .tag{font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.08em}
+.card .note{color:var(--muted);font-size:15px}
+.phase-group{display:grid;gap:12px}
+.phase-group > .label{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.form{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,4vw,36px);display:grid;gap:22px}
+.field{display:grid;gap:8px;min-width:0}
+label,.legend{font-weight:600;font-size:15px}
+.hint{color:var(--muted);font-size:13px}
+select,textarea,input[type=text]{width:100%;font:inherit;color:var(--fg);background:var(--field);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-height:46px}
+textarea{min-height:110px;resize:vertical}
+select:focus,textarea:focus,input:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:10px;min-width:0}
+.choices{display:flex;flex-wrap:wrap;gap:8px}
+.choices label{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--line);border-radius:999px;font-weight:600;font-size:14px;cursor:pointer;background:var(--field)}
+.choices input{accent-color:var(--accent)}
+.range-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center}
+.range-row input{width:100%;accent-color:var(--accent)}
+.range-row .end{font-size:13px;color:var(--muted);min-width:0}
+.range-row .end.ar{direction:rtl;text-align:right}
+.btn{appearance:none;border:0;border-radius:999px;background:var(--accent);color:var(--accent-ink);font:inherit;font-weight:700;padding:14px 22px;min-height:46px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.out{display:none;gap:14px;border-top:1px solid var(--line);padding-top:22px}
+.out.show{display:grid}
+.out textarea{min-height:240px;font-size:15px;direction:auto}
+.addr{font-weight:700;word-break:break-all}
+.note-box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;color:var(--muted);font-size:15px}
+footer{color:var(--muted);font-size:13px;text-align:center}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="bi">
+    <p class="eyebrow">PICKSIL · Session review</p>
+    <h1>The Signal System</h1>
+    <div class="bi">
+      <p class="intro" lang="en">Thank you for the session. This page recaps the six steps we covered, and it gives you a short place to tell me what you think.</p>
+      <p class="intro" lang="ar" dir="rtl" style="text-align:right">شكراً لوقتك في الجلسة. هذه الصفحة تلخص الخطوات الست التي تناولناها، وتتيح لك مكاناً قصيراً لتخبرني برأيك.</p>
+    </div>
+  </header>
+
+  <section class="phase-group" aria-labelledby="recap">
+    <h2 id="recap" class="bi"><span lang="en">The recap</span><span lang="ar" dir="rtl" style="text-align:right;color:var(--muted);font-weight:600">الملخص</span></h2>
+
+    <div class="stages">
+      <article class="card">
+        <p class="tag">HEAR · 01</p>
+        <div class="bi"><h3 lang="en">Listen</h3><h3 lang="ar" dir="rtl" style="text-align:right">الإصغاء</h3></div>
+        <div class="bi">
+          <p class="note" lang="en">We hear from you, your team and your customers, and we look at what is already being said about you.</p>
+          <p class="note" lang="ar" dir="rtl" style="text-align:right">نسمع منك ومن فريقك ومن عملائك، وننظر فيما يُقال عنك الآن.</p>
+        </div>
+      </article>
+      <article class="card">
+        <p class="tag">HEAR · 02</p>
+        <div class="bi"><h3 lang="en">Decode</h3><h3 lang="ar" dir="rtl" style="text-align:right">فك الشفرة</h3></div>
+        <div class="bi">
+          <p class="note" lang="en">We read your category and your competitors side by side, and separate what is truly distinctive from what everyone claims.</p>
+          <p class="note" lang="ar" dir="rtl" style="text-align:right">نقرأ قطاعك ومنافسيك جنباً إلى جنب، ونفصل ما هو مميز فعلاً عمّا يدّعيه الجميع.</p>
+        </div>
+      </article>
+      <article class="card">
+        <p class="tag">SET · 03</p>
+        <div class="bi"><h3 lang="en">Position</h3><h3 lang="ar" dir="rtl" style="text-align:right">التكوين</h3></div>
+        <div class="bi">
+          <p class="note" lang="en">The strategic choice: who you are for, what you stand against, and the one place you can own in their mind.</p>
+          <p class="note" lang="ar" dir="rtl" style="text-align:right">القرار الاستراتيجي: لمن أنت، وما الذي تقف في مواجهته، والمساحة الوحيدة التي تستطيع امتلاكها في ذهنهم.</p>
+        </div>
+      </article>
+      <article class="card">
+        <p class="tag">SET · 04</p>
+        <div class="bi"><h3 lang="en">Voice</h3><h3 lang="ar" dir="rtl" style="text-align:right">الصوت</h3></div>
+        <div class="bi">
+          <p class="note" lang="en">The position turned into language: the message order, the tone, and the lines you repeat and never say.</p>
+          <p class="note" lang="ar" dir="rtl" style="text-align:right">التكوين حين يتحول إلى لغة: ترتيب الرسائل، والنبرة، والجمل التي تكررها ولا تقولها أبداً.</p>
+        </div>
+      </article>
+      <article class="card">
+        <p class="tag">SEND · 05</p>
+        <div class="bi"><h3 lang="en">Shape</h3><h3 lang="ar" dir="rtl" style="text-align:right">التشكيل</h3></div>
+        <div class="bi">
+          <p class="note" lang="en">Strategy made visible: the identity system, the type and colour, and the website or product your brand lives in.</p>
+          <p class="note" lang="ar" dir="rtl" style="text-align:right">الاستراتيجية حين تصبح مرئية: نظام الهوية، والخطوط والألوان، والموقع أو المنتج الذي تعيش فيه العلامة.</p>
+        </div>
+      </article>
+      <article class="card">
+        <p class="tag">SEND · 06</p>
+        <div class="bi"><h3 lang="en">Transmit</h3><h3 lang="ar" dir="rtl" style="text-align:right">البث</h3></div>
+        <div class="bi">
+          <p class="note" lang="en">Launch and rollout, with guidelines your team can keep running without me.</p>
+          <p class="note" lang="ar" dir="rtl" style="text-align:right">الإطلاق والانتشار، مع إرشادات يستطيع فريقك مواصلة العمل بها من دوني.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="fb">
+    <div class="bi" style="margin-bottom:20px">
+      <h2 id="fb" lang="en">Your feedback</h2>
+      <h2 lang="ar" dir="rtl" style="text-align:right;color:var(--muted)">رأيك</h2>
+    </div>
+
+    <form class="form" id="fbForm" novalidate>
+
+      <div class="field">
+        <div class="bi">
+          <label for="helpful" lang="en">Which step helped you most?</label>
+          <label for="helpful" lang="ar" dir="rtl" style="text-align:right;color:var(--muted)">أي خطوة كانت الأكثر فائدة لك؟</label>
+        </div>
+        <select id="helpful" name="helpful">
+          <option value="">Choose one · اختر واحدة</option>
+          <option>Listen · الإصغاء</option>
+          <option>Decode · فك الشفرة</option>
+          <option>Position · التكوين</option>
+          <option>Voice · الصوت</option>
+          <option>Shape · التشكيل</option>
+          <option>Transmit · البث</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <div class="bi">
+          <label for="unclear" lang="en">What felt unclear or needs more explanation?</label>
+          <label for="unclear" lang="ar" dir="rtl" style="text-align:right;color:var(--muted)">ما الذي بدا غير واضح أو يحتاج إلى شرح أكثر؟</label>
+        </div>
+        <textarea id="unclear" name="unclear"></textarea>
+      </div>
+
+      <div class="field">
+        <div class="bi">
+          <label for="change" lang="en">What would you change or add?</label>
+          <label for="change" lang="ar" dir="rtl" style="text-align:right;color:var(--muted)">ماذا تغيّر أو تضيف؟</label>
+        </div>
+        <textarea id="change" name="change"></textarea>
+      </div>
+
+      <fieldset>
+        <div class="bi">
+          <span class="legend" lang="en">How ready do you feel to start? (1 = not yet, 5 = ready)</span>
+          <span class="legend" lang="ar" dir="rtl" style="text-align:right;color:var(--muted)">ما مدى استعدادك للبدء؟ (1 = ليس بعد، 5 = جاهز)</span>
+        </div>
+        <div class="choices" role="radiogroup">
+          <label><input type="radio" name="ready" value="1"> 1</label>
+          <label><input type="radio" name="ready" value="2"> 2</label>
+          <label><input type="radio" name="ready" value="3"> 3</label>
+          <label><input type="radio" name="ready" value="4"> 4</label>
+          <label><input type="radio" name="ready" value="5"> 5</label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <div class="bi">
+          <label for="name" lang="en">Your name (optional)</label>
+          <label for="name" lang="ar" dir="rtl" style="text-align:right;color:var(--muted)">اسمك (اختياري)</label>
+        </div>
+        <input type="text" id="name" name="name" autocomplete="name">
+      </div>
+
+      <div class="actions">
+        <button class="btn" type="submit">
+          <span lang="en">Prepare my feedback</span>
+          <span lang="ar" dir="rtl">جهّز ملاحظاتي</span>
+        </button>
+      </div>
+
+      <div class="out" id="out" aria-live="polite">
+        <div class="note-box">
+          <div class="bi">
+            <span lang="en">Copy the text below and send it to <span class="addr">hello@picksil.co</span>. Or reply to the message that brought you here.</span>
+            <span lang="ar" dir="rtl" style="text-align:right">انسخ النص أدناه وأرسله إلى <span class="addr">hello@picksil.co</span>، أو رد على الرسالة التي أوصلتك إلى هنا.</span>
+          </div>
+        </div>
+        <textarea id="composed" readonly aria-label="Your feedback, ready to copy"></textarea>
+        <div class="actions">
+          <button class="btn" type="button" id="copyBtn">
+            <span lang="en">Copy text</span>
+            <span lang="ar" dir="rtl">نسخ النص</span>
+          </button>
+          <span id="copyNote" class="hint" role="status"></span>
+        </div>
+      </div>
+
+    </form>
+  </section>
+
+  <footer class="bi">
+    <span lang="en">Designed by PICKSIL · www.picksil.co</span>
+    <span lang="ar" dir="rtl">مصمّم بواسطة PICKSIL · www.picksil.co</span>
+  </footer>
+
+</main>
+
+<script>
+(function(){
+  var form = document.getElementById('fbForm');
+  var out = document.getElementById('out');
+  var composed = document.getElementById('composed');
+  var copyBtn = document.getElementById('copyBtn');
+  var copyNote = document.getElementById('copyNote');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var d = new FormData(form);
+    var lines = [
+      'The Signal System: session feedback',
+      '',
+      'Most helpful step: ' + (d.get('helpful') || '(not chosen)'),
+      'Unclear: ' + ((d.get('unclear') || '').trim() || '(nothing)'),
+      'Would change or add: ' + ((d.get('change') || '').trim() || '(nothing)'),
+      'Readiness (1-5): ' + (d.get('ready') || '(not chosen)'),
+      'From: ' + ((d.get('name') || '').trim() || '(not given)')
+    ];
+    composed.value = lines.join('\n');
+    out.classList.add('show');
+    copyNote.textContent = '';
+    composed.focus();
+  });
+
+  copyBtn.addEventListener('click', function(){
+    composed.select();
+    var done = function(){ copyNote.textContent = 'Copied. · تم النسخ.'; };
+    var fail = function(){ copyNote.textContent = 'Select the text and copy it manually. · حدد النص وانسخه يدوياً.'; };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(composed.value).then(done, function(){
+          try { document.execCommand('copy') ? done() : fail(); } catch(_) { fail(); }
+        });
+      } else {
+        document.execCommand('copy') ? done() : fail();
+      }
+    } catch(_) { fail(); }
+  });
+})();
+</script>
+</body>
+</html>
