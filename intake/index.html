@@ -62,6 +62,7 @@ input:focus,textarea:focus,select:focus,button:focus-visible{outline:2px solid v
 .out.show{display:grid}
 .out textarea{min-height:340px;font-size:15px}
 .addr{font-weight:700;word-break:break-all}
+a.btn{text-decoration:none;display:inline-block;text-align:center}
 .band{background:#0b1214;border-radius:18px;padding:clamp(24px,5vw,40px);text-align:center}
 .band[hidden]{display:none}
 footer{color:var(--muted);font-size:13px;text-align:center}
@@ -124,7 +125,7 @@ footer{color:var(--muted);font-size:13px;text-align:center}
         <textarea id="who" name="who"></textarea>
       </div>
       <div class="field">
-        <div class="bi"><label for="notfor" lang="en">Who is it NOT for? Saying no to someone is part of positioning.</label><span class="label-ar">لمن ليس مناسباً؟ قول لا لشخص ما جزء من التموضع.</span></div>
+        <div class="bi"><label for="notfor" lang="en">Who is it NOT for? Saying no to someone is part of positioning.</label><span class="label-ar">لمن ليس مناسباً؟ قول لا لشخص ما جزء من التكوين.</span></div>
         <textarea id="notfor" name="notfor"></textarea>
       </div>
       <div class="field">
@@ -166,7 +167,7 @@ footer{color:var(--muted);font-size:13px;text-align:center}
         <span class="num">04</span>
         <div class="bi">
           <h2 id="s4" lang="en">Positioning</h2>
-          <h2 lang="ar" dir="rtl" style="text-align:right;color:var(--muted);font-size:17px">التموضع</h2>
+          <h2 lang="ar" dir="rtl" style="text-align:right;color:var(--muted);font-size:17px">التكوين</h2>
         </div>
       </div>
       <div class="bi">
@@ -192,7 +193,7 @@ footer{color:var(--muted);font-size:13px;text-align:center}
         </div>
       </div>
       <div class="preview" aria-live="polite">
-        <div class="bi"><span class="hint" lang="en">Your positioning sentence</span><span class="label-ar">جملة التموضع</span></div>
+        <div class="bi"><span class="hint" lang="en">Your positioning sentence</span><span class="label-ar">جملة التكوين</span></div>
         <p id="pline" lang="en">For <span class="fill" data-out="who">[who]</span>, <span data-out="name">[name]</span> is the <span class="fill" data-out="cat">[category]</span> that <span class="fill" data-out="benefit">[benefit]</span>, because <span class="fill" data-out="proof">[proof]</span>.</p>
       </div>
     </section>
@@ -277,6 +278,14 @@ footer{color:var(--muted);font-size:13px;text-align:center}
           <span lang="en">Copy brief</span>
           <span lang="ar" dir="rtl">نسخ الملخص</span>
         </button>
+        <a class="btn ghost" id="waBtn" href="https://wa.me/" target="_blank" rel="noopener">
+          <span lang="en">Send on WhatsApp</span>
+          <span lang="ar" dir="rtl">إرسال عبر واتساب</span>
+        </a>
+        <a class="btn ghost" id="mailBtn" href="mailto:hello@picksil.co">
+          <span lang="en">Send by email</span>
+          <span lang="ar" dir="rtl">إرسال بالبريد</span>
+        </a>
         <span id="copyNote" class="hint" role="status"></span>
       </div>
     </section>
@@ -382,6 +391,10 @@ footer{color:var(--muted);font-size:13px;text-align:center}
     ];
 
     brief.value = lines.join('\n');
+    // Prefill the share links with the brief, so the client only has to tap send.
+    var subject = 'Brand strategy brief' + (client ? ' · ' + client : '');
+    document.getElementById('waBtn').href = 'https://wa.me/?text=' + encodeURIComponent(brief.value);
+    document.getElementById('mailBtn').href = 'mailto:hello@picksil.co?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(brief.value);
     out.classList.add('show');
     copyNote.textContent = '';
     out.scrollIntoView({behavior:'smooth', block:'start'});
