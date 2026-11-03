@@ -66,6 +66,7 @@ fieldset{border:0;margin:0;padding:0;display:grid;gap:10px;min-width:0}
 .out.show{display:grid}
 .out textarea{min-height:240px;font-size:15px;direction:auto}
 .addr{font-weight:700;word-break:break-all}
+a.btn{text-decoration:none;display:inline-block;text-align:center}
 .note-box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;color:var(--muted);font-size:15px}
 footer{color:var(--muted);font-size:13px;text-align:center}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -220,6 +221,14 @@ footer{color:var(--muted);font-size:13px;text-align:center}
             <span lang="en">Copy text</span>
             <span lang="ar" dir="rtl">نسخ النص</span>
           </button>
+          <a class="btn ghost" id="waBtn" href="https://wa.me/966560038357" target="_blank" rel="noopener">
+            <span lang="en">Send on WhatsApp</span>
+            <span lang="ar" dir="rtl">إرسال عبر واتساب</span>
+          </a>
+          <a class="btn ghost" id="mailBtn" href="mailto:hello@picksil.co">
+            <span lang="en">Send by email</span>
+            <span lang="ar" dir="rtl">إرسال بالبريد</span>
+          </a>
           <span id="copyNote" class="hint" role="status"></span>
         </div>
       </div>
@@ -255,6 +264,9 @@ footer{color:var(--muted);font-size:13px;text-align:center}
       'From: ' + ((d.get('name') || '').trim() || '(not given)')
     ];
     composed.value = lines.join('\n');
+    // Prefill the share links with the feedback, so the client only has to tap send.
+    document.getElementById('waBtn').href = 'https://wa.me/966560038357?text=' + encodeURIComponent(composed.value);
+    document.getElementById('mailBtn').href = 'mailto:hello@picksil.co?subject=' + encodeURIComponent('Signal System session feedback') + '&body=' + encodeURIComponent(composed.value);
     out.classList.add('show');
     copyNote.textContent = '';
     composed.focus();
