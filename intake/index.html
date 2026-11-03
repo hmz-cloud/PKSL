@@ -278,7 +278,7 @@ footer{color:var(--muted);font-size:13px;text-align:center}
           <span lang="en">Copy brief</span>
           <span lang="ar" dir="rtl">نسخ الملخص</span>
         </button>
-        <a class="btn ghost" id="waBtn" href="https://wa.me/" target="_blank" rel="noopener">
+        <a class="btn ghost" id="waBtn" href="https://wa.me/966560038357" target="_blank" rel="noopener">
           <span lang="en">Send on WhatsApp</span>
           <span lang="ar" dir="rtl">إرسال عبر واتساب</span>
         </a>
@@ -393,7 +393,7 @@ footer{color:var(--muted);font-size:13px;text-align:center}
     brief.value = lines.join('\n');
     // Prefill the share links with the brief, so the client only has to tap send.
     var subject = 'Brand strategy brief' + (client ? ' · ' + client : '');
-    document.getElementById('waBtn').href = 'https://wa.me/?text=' + encodeURIComponent(brief.value);
+    document.getElementById('waBtn').href = 'https://wa.me/966560038357?text=' + encodeURIComponent(brief.value);
     document.getElementById('mailBtn').href = 'mailto:hello@picksil.co?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(brief.value);
     out.classList.add('show');
     copyNote.textContent = '';
