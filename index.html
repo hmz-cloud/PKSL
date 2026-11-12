@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PICKSIL — Brand Strategy & Design Studio in Al Khobar, Saudi Arabia</title>
+<title>PICKSIL — Brand Strategy & Design Studio, Al Khobar</title>
 <meta name="description" content="PICKSIL is an independent branding studio in Al Khobar serving businesses across Saudi Arabia: brand strategy, logo & visual identity, packaging and website design. Work directly with founder Hassan Zarroug.">
 <link rel="canonical" href="https://www.picksil.co/">
 <meta property="og:title" content="PICKSIL — Brand Strategy & Design Studio in Al Khobar, Saudi Arabia">
@@ -639,6 +639,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
           </div>
           <form id="contactForm" novalidate>
             <div><label for="f-name">Your name *</label><input id="f-name" name="name" autocomplete="name" required></div>
+            <div><label for="f-email">Your email *</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+            <div><label for="f-phone">Phone / WhatsApp</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
             <div><label for="f-scope">Project scope</label>
               <select id="f-scope" name="scope">
                 <option>Brand Strategy & Identity</option><option>Brand Identity Only</option><option>Web Design / Digital</option><option>Packaging</option><option>Consulting / Advisory</option><option>Other</option>
@@ -686,10 +688,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   const form = document.getElementById('contactForm'), note = document.getElementById('formNote');
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const name = form.name.value.trim(), msg = form.message.value.trim();
-    if (!name || !msg) { note.textContent = 'Please add your name and a short message.'; note.style.color = '#ff8a8a'; (name ? form.message : form.name).focus(); return; }
+    const name = form.name.value.trim(), msg = form.message.value.trim(), email = form.email.value.trim(), phone = form.phone.value.trim();
+    if (!name || !msg || !form.email.checkValidity() || !email) { note.textContent = 'Please add your name, a valid email and a short message.'; note.style.color = '#ff8a8a'; (!name ? form.name : (!email || !form.email.checkValidity()) ? form.email : form.message).focus(); return; }
     const subject = `New project inquiry — ${form.scope.value}`;
-    const body = `Name: ${name}\nScope: ${form.scope.value}\n\n${msg}`;
+    const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone || '-'}\nScope: ${form.scope.value}\n\n${msg}`;
     location.href = `mailto:hello@picksil.co?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     note.style.color = ''; note.textContent = 'Opening your email app…';
   });
